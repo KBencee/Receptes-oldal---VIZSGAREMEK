@@ -72,6 +72,8 @@ namespace ReceptekWebAPI.Controllers
 
             var komment = await _context.ReceptKommentek
                 .Include(k => k.User)
+                .OrderBy(k => k.IrtaEkkor)
+                .ThenBy(k => k.Id)
                 .FirstOrDefaultAsync(k => k.Id == id);
 
             if (komment == null)
@@ -100,7 +102,8 @@ namespace ReceptekWebAPI.Controllers
             var kommentek = await _context.ReceptKommentek
                 .Include(k => k.User)
                 .Where(k => k.ReceptId == receptId)
-                .OrderByDescending(k => k.IrtaEkkor)
+                .OrderBy(k => k.IrtaEkkor)
+                .ThenBy(k => k.Id)
                 .ToListAsync();
 
             var responses = kommentek.Select(k => new KommentResponseDto

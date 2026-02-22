@@ -30,6 +30,8 @@ namespace ReceptekWebAPI.Controllers
             _imageKitService = imageKitService;
         }
 
+        //User endpointok
+
         [HttpPost("register")]
         public async Task<ActionResult<UserResponseDto>> Register(UserDto request)
         {
@@ -100,6 +102,76 @@ namespace ReceptekWebAPI.Controllers
             };
 
             return Ok(response);
+        }
+
+        [HttpPut("me/username")]
+        [Authorize]
+        public async Task<ActionResult<UserResponseDto>> UpdateUsername([FromBody] UserUpdateDto dto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var userIdStr = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(userIdStr) || !Guid.TryParse(userIdStr, out var userId))
+                return Unauthorized();
+
+            var user = await _context.Users.FindAsync(userId);
+            if (user == null)
+                return NotFound("Felhasználó nem található");
+
+            var usernameExists = await _context.Users
+                .AnyAsync(u => u.Username == dto.NewUsername && u.Id != userId);
+
+            if (usernameExists)
+                return BadRequest("Ez a felhasználónév már foglalt");
+
+            user.Username = dto.NewUsername;
+            await _context.SaveChangesAsync();
+
+            var response = new UserResponseDto
+            {
+                Id = user.Id,
+                Username = user.Username,
+                Role = user.Role,
+                ProfileImageUrl = user.ProfileImageUrl
+            };
+
+            return Ok(response);
+        }
+
+        [HttpPut("me/password")]
+        [Authorize]
+        public async Task<ActionResult> ChangePassword([FromBody] PasswordChangeDto dto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var userIdStr = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(userIdStr) || !Guid.TryParse(userIdStr, out var userId))
+                return Unauthorized();
+
+            var user = await _context.Users.FindAsync(userId);
+            if (user == null)
+                return NotFound("Felhasználó nem található");
+
+            var passwordHasher = new PasswordHasher<User>();
+            var verificationResult = passwordHasher.VerifyHashedPassword(
+                user,
+                user.PasswordHash,
+                dto.OldPassword
+            );
+
+            if (verificationResult == PasswordVerificationResult.Failed)
+                return BadRequest("A régi jelszó nem megfelelő");
+
+            user.PasswordHash = passwordHasher.HashPassword(user, dto.NewPassword);
+
+            user.RefreshToken = null;
+            user.RefreshTokenExpiryTime = null;
+
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Jelszó sikeresen megváltoztatva. Jelentkezz be újra!" });
         }
 
         [AllowAnonymous]
@@ -179,18 +251,121 @@ namespace ReceptekWebAPI.Controllers
             }
         }
 
-        [Authorize]
-        [HttpGet]
-        public IActionResult AuthenticationOnlyEndpoint()
+        //Admin endpointok
+
+        [HttpGet("admin/users")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult<List<UserResponseDto>>> GetAllUsers()
         {
-            return Ok("You are authenticated!");
+            var users = await _context.Users
+                .Select(u => new UserResponseDto
+                {
+                    Id = u.Id,
+                    Username = u.Username,
+                    Role = u.Role,
+                    ProfileImageUrl = u.ProfileImageUrl
+                })
+                .ToListAsync();
+
+            return Ok(users);
         }
 
+        [HttpGet("admin/users/{id:guid}")]
         [Authorize(Roles = "Admin")]
-        [HttpGet("admin-only")]
-        public IActionResult AdminOnlyEndpoint()
+        public async Task<ActionResult<UserResponseDto>> AdminGetUserById(Guid id)
         {
-            return Ok("You are an admin!");
+            var user = await _context.Users.FindAsync(id);
+
+            if (user == null)
+                return NotFound("Felhasználó nem található");
+
+            var response = new UserResponseDto
+            {
+                Id = user.Id,
+                Username = user.Username,
+                Role = user.Role,
+                ProfileImageUrl = user.ProfileImageUrl
+            };
+
+            return Ok(response);
+        }
+
+        [HttpPut("admin/users/{id:guid}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult<UserResponseDto>> UpdateUser(Guid id, [FromBody] AdminUserUpdateDto dto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var user = await _context.Users.FindAsync(id);
+            if (user == null)
+                return NotFound("Felhasználó nem található");
+
+            if (!string.IsNullOrEmpty(dto.Username))
+            {
+                var usernameExists = await _context.Users
+                    .AnyAsync(u => u.Username == dto.Username && u.Id != id);
+
+                if (usernameExists)
+                    return BadRequest("Ez a felhasználónév már foglalt");
+
+                user.Username = dto.Username;
+            }
+
+            if (!string.IsNullOrEmpty(dto.Role))
+            {
+                if (dto.Role != "User" && dto.Role != "Admin")
+                    return BadRequest("A role csak 'User' vagy 'Admin' lehet");
+
+                user.Role = dto.Role;
+            }
+
+            await _context.SaveChangesAsync();
+
+            var response = new UserResponseDto
+            {
+                Id = user.Id,
+                Username = user.Username,
+                Role = user.Role,
+                ProfileImageUrl = user.ProfileImageUrl
+            };
+
+            return Ok(response);
+        }
+
+        [HttpPut("admin/users/{id:guid}/role")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult> ChangeUserRole(Guid id, [FromBody] string newRole)
+        {
+            if (newRole != "User" && newRole != "Admin")
+                return BadRequest("A rang csak 'User' vagy 'Admin' lehet");
+
+            var user = await _context.Users.FindAsync(id);
+            if (user == null)
+                return NotFound("Felhasználó nem található");
+
+            user.Role = newRole;
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = $"Rang frissítve: {newRole}" });
+        }
+
+        [HttpDelete("admin/users/{id:guid}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult> DeleteUser(Guid id)
+        {
+            var user = await _context.Users.FindAsync(id);
+            if (user == null)
+                return NotFound("Felhasználó nem található");
+
+            var currentUserIdStr = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (Guid.TryParse(currentUserIdStr, out var currentUserId) && currentUserId == id)
+                return BadRequest("Saját magadat nem törölheted!");
+
+            _context.Users.Remove(user);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Felhasználó törölve" });
         }
     }
 }
