@@ -201,7 +201,7 @@ namespace ReceptekWebAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var file = dto.File;
+            var file = dto.Kep;
             if (file == null || file.Length == 0)
                 return BadRequest("File required.");
 

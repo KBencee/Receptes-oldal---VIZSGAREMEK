@@ -12,9 +12,10 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="1">
-            <Button Content="Adatok megjelenítése"/>
+            <Button Content="Hozzáadás" IsEnabled="False"/>
+            <Button Content="Törlés" IsEnabled="False"/>
         </StackPanel>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <DataGrid x:Name="AdatGrid" d:ItemsSource="{d:SampleData ItemCount=5}"/>
 
     </Grid>
 </Window>

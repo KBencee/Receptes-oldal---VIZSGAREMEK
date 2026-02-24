@@ -6,6 +6,6 @@ namespace ReceptekWebAPI.Models
     public class UserProfileImageDto
     {
         [Required]
-        public IFormFile File { get; set; } = null!;
+        public IFormFile Kep { get; set; } = null!;
     }
 }

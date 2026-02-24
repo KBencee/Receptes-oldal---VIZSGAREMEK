@@ -321,7 +321,7 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "File": {
+                  "Kep": {
                     "$ref": "#/components/schemas/IFormFile"
                   }
                 }
