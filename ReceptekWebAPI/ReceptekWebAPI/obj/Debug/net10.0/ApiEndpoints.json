@@ -27,6 +27,16 @@
   },
   {
     "ContainingType": "ReceptekWebAPI.Controllers.AuthController",
+    "Method": "GetAdminStats",
+    "RelativePath": "api/Auth/admin/stats",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReceptekWebAPI.Controllers.AuthController",
     "Method": "GetAllUsers",
     "RelativePath": "api/Auth/admin/users",
     "HttpMethod": "GET",

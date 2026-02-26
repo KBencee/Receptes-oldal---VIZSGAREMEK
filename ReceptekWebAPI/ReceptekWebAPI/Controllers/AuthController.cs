@@ -367,5 +367,50 @@ namespace ReceptekWebAPI.Controllers
 
             return Ok(new { message = "Felhasználó törölve" });
         }
+
+        [HttpGet("admin/stats")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult<object>> GetAdminStats()
+        {
+            var stats = new
+            {
+                osszFelhasznalo = await _context.Users.CountAsync(),
+                osszRecept = await _context.Receptek.CountAsync(),
+                osszKomment = await _context.ReceptKommentek.CountAsync(),
+
+                receptekKeppel = await _context.Receptek.CountAsync(r => r.KepUrl != null),
+                receptekKepNelkul = await _context.Receptek.CountAsync(r => r.KepUrl == null),
+
+                osszLike = await _context.Receptek.SumAsync(r => r.Likes),
+
+                legtobbetFeltoltok = await _context.Users
+                .Select(u => new
+                {
+                    username = u.Username,
+                    receptekSzama = u.Receptek.Count
+                })
+                .OrderByDescending(x => x.receptekSzama)
+                .Take(5)
+                .ToListAsync(),
+
+                topReceptek = await _context.Receptek
+                .OrderByDescending(r => r.Likes)
+                .Take(5)
+                .Select(r => new
+                {
+                    nev = r.Nev,
+                    likes = r.Likes,
+                    feltolto = r.User!.Username
+                })
+                .ToListAsync(),
+
+                maFeltolve = await _context.Receptek
+                .CountAsync(r => r.FeltoltveEkkor.Date == DateTime.UtcNow.Date),
+
+                maiKommentek = await _context.ReceptKommentek
+                .CountAsync(r => r.IrtaEkkor.Date == DateTime.UtcNow.Date)
+            };
+            return Ok(stats);
+        }
     }
 }

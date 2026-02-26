@@ -554,6 +554,18 @@
         }
       }
     },
+    "/api/Auth/admin/stats": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Cimkek": {
       "post": {
         "tags": [
