@@ -17,9 +17,12 @@ namespace AdminFelület
     /// </summary>
     public partial class MainWindow : Window
     {
+<<<<<<< HEAD
         private readonly ApiService _apiService;
         private string _currentView = "users";
 
+=======
+>>>>>>> b984e98324e5e84cbde25e9422410b8983cfd868
         public MainWindow(Services.ApiService apiService)
         {
             InitializeComponent();
