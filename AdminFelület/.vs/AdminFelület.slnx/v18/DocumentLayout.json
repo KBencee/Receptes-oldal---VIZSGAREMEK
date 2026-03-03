@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\kissb\\onedrive\\dokumentumok\\receptes-oldal-backend---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|solutionrelative:adminfel\u00FClet\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\kissb\\onedrive\\dokumentumok\\receptes-oldal-backend---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|solutionrelative:adminfel\u00FClet\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\kissb\\onedrive\\dokumentumok\\receptes-oldal-backend---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|solutionrelative:adminfel\u00FClet\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\kissb\\onedrive\\dokumentumok\\receptes-oldal-backend---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|solutionrelative:adminfel\u00FClet\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\kissb\\onedrive\\dokumentumok\\receptes-oldal-backend---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,12 +19,20 @@
       "RelativeMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|solutionrelative:adminfel\u00FClet\\models\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\kissb\\onedrive\\dokumentumok\\receptes-oldal-backend---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|solutionrelative:adminfel\u00FClet\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\kissb\\onedrive\\dokumentumok\\receptes-oldal-backend---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|solutionrelative:adminfel\u00FClet\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\kissb\\onedrive\\dokumentumok\\receptes-oldal-backend---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|solutionrelative:adminfel\u00FClet\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\kissb\\onedrive\\dokumentumok\\receptes-oldal-backend---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|solutionrelative:adminfel\u00FClet\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\kissb\\onedrive\\dokumentumok\\receptes-oldal-backend---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|solutionrelative:adminfel\u00FClet\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\kissb\\onedrive\\dokumentumok\\receptes-oldal-backend---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|solutionrelative:adminfel\u00FClet\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,27 +47,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "LoginWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\LoginWindow.xaml.cs",
-              "RelativeDocumentMoniker": "AdminFel\u00FClet\\LoginWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\LoginWindow.xaml.cs",
-              "RelativeToolTip": "AdminFel\u00FClet\\LoginWindow.xaml.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "AdminFel\u00FClet\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\MainWindow.xaml.cs",
+              "RelativeToolTip": "AdminFel\u00FClet\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T09:13:35.152Z",
+              "WhenOpened": "2026-02-24T07:07:07.256Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ApiService.cs",
-              "DocumentMoniker": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\Services\\ApiService.cs",
-              "RelativeDocumentMoniker": "AdminFel\u00FClet\\Services\\ApiService.cs",
-              "ToolTip": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\Services\\ApiService.cs",
-              "RelativeToolTip": "AdminFel\u00FClet\\Services\\ApiService.cs",
-              "ViewState": "AgIAAJIAAAAAAAAAAAAgwKUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T07:06:06.248Z"
+              "DocumentIndex": 6,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\App.xaml",
+              "RelativeDocumentMoniker": "AdminFel\u00FClet\\App.xaml",
+              "ToolTip": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\App.xaml",
+              "RelativeToolTip": "AdminFel\u00FClet\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-03T07:35:55.85Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -69,13 +77,14 @@
               "RelativeDocumentMoniker": "AdminFel\u00FClet\\Models\\Models.cs",
               "ToolTip": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\Models\\Models.cs",
               "RelativeToolTip": "AdminFel\u00FClet\\Models\\Models.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAA3wDkAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAlwBoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T06:57:16.806Z"
+              "WhenOpened": "2026-02-25T06:57:16.806Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "LoginWindow.xaml",
               "DocumentMoniker": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\LoginWindow.xaml",
               "RelativeDocumentMoniker": "AdminFel\u00FClet\\LoginWindow.xaml",
@@ -86,26 +95,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "AdminFel\u00FClet\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\MainWindow.xaml.cs",
-              "RelativeToolTip": "AdminFel\u00FClet\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "LoginWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\LoginWindow.xaml.cs",
+              "RelativeDocumentMoniker": "AdminFel\u00FClet\\LoginWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\LoginWindow.xaml.cs",
+              "RelativeToolTip": "AdminFel\u00FClet\\LoginWindow.xaml.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAswDEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T07:07:07.256Z"
+              "WhenOpened": "2026-02-26T09:13:35.152Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\MainWindow.xaml",
               "RelativeDocumentMoniker": "AdminFel\u00FClet\\MainWindow.xaml",
               "ToolTip": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\MainWindow.xaml",
               "RelativeToolTip": "AdminFel\u00FClet\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-18T07:34:35.979Z"
+              "WhenOpened": "2026-02-18T07:34:35.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApiService.cs",
+              "DocumentMoniker": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\Services\\ApiService.cs",
+              "RelativeDocumentMoniker": "AdminFel\u00FClet\\Services\\ApiService.cs",
+              "ToolTip": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\Services\\ApiService.cs",
+              "RelativeToolTip": "AdminFel\u00FClet\\Services\\ApiService.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAvwDwAAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T07:06:06.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\App.xaml.cs",
+              "RelativeDocumentMoniker": "AdminFel\u00FClet\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\App.xaml.cs",
+              "RelativeToolTip": "AdminFel\u00FClet\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T07:35:58.695Z",
+              "EditorCaption": ""
             }
           ]
         }

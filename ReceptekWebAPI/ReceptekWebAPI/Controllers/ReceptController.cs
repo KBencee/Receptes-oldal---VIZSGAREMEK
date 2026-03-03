@@ -844,7 +844,13 @@ namespace ReceptekWebAPI.Controllers
             recept.Likes++;
             await _context.SaveChangesAsync();
 
-            return Ok(new { likes = recept.Likes, liked = true });
+            var dto = new LikeResponseDto
+            {
+                Likes = recept.Likes,
+                Liked = true
+            };
+
+            return Ok(dto);
         }
 
         [HttpDelete("{id:guid}/like")]
@@ -872,7 +878,13 @@ namespace ReceptekWebAPI.Controllers
 
             await _context.SaveChangesAsync();
 
-            return Ok(new { likes = recept.Likes, liked = false });
+            var dto = new LikeResponseDto
+            {
+                Likes = recept.Likes,
+                Liked = false
+            };
+
+            return Ok(dto);
         }
     }
 }

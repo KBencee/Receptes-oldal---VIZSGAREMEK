@@ -43,16 +43,59 @@ namespace AdminFelület.Services
 
                 if (response.IsSuccessStatusCode)
                 {
-                    var result = await response.Content.ReadFromJsonAsync<LoginResponse>();
-                    if (result != null)
+                    var tokenResult = await response.Content.ReadFromJsonAsync<TokenResponseDto>();
+                    if (tokenResult == null || string.IsNullOrEmpty(tokenResult.AccessToken))
                     {
-                        _accessToken = result.AccessToken;
-                        SetAuthHeader();
+                        Console.WriteLine("Login: token response was null or missing access token.");
+                        return null;
                     }
-                    return result;
+
+                    _accessToken = tokenResult.AccessToken;
+                    SetAuthHeader();
+
+                    try
+                    {
+                        var userDto = await _httpClient.GetFromJsonAsync<UserResponseDto>("Auth/me");
+                        if (userDto == null)
+                        {
+                            Console.WriteLine("Login: could not retrieve user info from /Auth/me.");
+                            return null;
+                        }
+
+                        var loginResponse = new LoginResponse
+                        {
+                            AccessToken = tokenResult.AccessToken,
+                            RefreshToken = tokenResult.RefreshToken,
+                            User = new UserModel
+                            {
+                                Id = userDto.Id,
+                                Username = userDto.Username,
+                                Role = userDto.Role,
+                                ProfilKepUrl = userDto.ProfileImageUrl
+                            }
+                        };
+
+                        Console.WriteLine($"AccessToken: {loginResponse.AccessToken}");
+                        Console.WriteLine($"User.Username: {loginResponse.User?.Username}");
+                        Console.WriteLine($"User.Role: {loginResponse.User?.Role}");
+
+                        return loginResponse;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Failed to get /Auth/me: {ex.Message}");
+                        return null;
+                    }
+                }
+                else
+                {
+                    var errorContent = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine($"Login hiba: {response.StatusCode} - {errorContent}");
                 }
             }
-            catch { }
+            catch (Exception ex) {
+                Console.WriteLine($"Exception: {ex.Message}");
+            }
             return null;
         }
 

@@ -5,17 +5,51 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminFelület"
         mc:Ignorable="d"
-        Title="ReceptesAdmin" Height="450" Width="800">
+        Title="ReceptesAdmin" Height="600" Width="1000"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="1">
-            <Button Content="Hozzáadás" IsEnabled="False"/>
-            <Button Content="Törlés" IsEnabled="False"/>
-        </StackPanel>
-        <DataGrid x:Name="AdatGrid" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <Border Grid.Row="0" Background="#252526" Padding="15">
+            <Grid>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Receptes Oldal - Admin Panel" FontSize="18" FontWeight="Bold" Foreground="White" VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <ComboBox x:Name="ViewSelector" Width="150" Height="30">
+                        <ComboBoxItem Content="Felhasználók"/>
+                        <ComboBoxItem Content="Receptek"/>
+                        <ComboBoxItem Content="Kommentek"/>
+                        <ComboBoxItem Content="Statisztikák"/>
+                    </ComboBox>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <StackPanel Grid.Column="1">
+                <Button x:Name="RefreshButton" Content="Frissites" Click="RefreshButton_Click"></Button>
+                <Button x:Name="EditButton" Content="Módosítás" IsEnabled="False" Click="EditButton_Click"/>
+                <Button x:Name="DeleteButton" Content="Törlés" IsEnabled="False" Click="DeleteButton_Click"/>
+                <StackPanel>
+                    <TextBlock Text="Kiválasztott elem:"/>
+                    <TextBlock x:Name="SelectedItemTextBlock" Text="Nincs kiválasztott elem." TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock x:Name="StatsText" TextWrapping="Wrap"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <DataGrid x:Name="DataGrid" AutoGenerateColumns="False" SelectionMode="Single" SelectionChanged="DataGrid_SelectionChanged" Grid.RowSpan="2"/>
+        </Grid>
     </Grid>
 </Window>

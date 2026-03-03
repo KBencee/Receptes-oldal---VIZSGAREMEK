@@ -18,10 +18,47 @@ namespace AdminFelület
     /// </summary>
     public partial class LoginWindow : Window
     {
+        private readonly ApiService _apiService;
         public LoginWindow()
         {
             InitializeComponent();
             _apiService = new ApiService();
+        }
+
+        private void ShowError(string message)
+        {
+            ErrorText.Text = message;
+            ErrorText.Visibility = Visibility.Visible;
+        }
+
+        private async void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            ErrorText.Visibility = Visibility.Collapsed;
+
+            var username = UsernameBox.Text.Trim();
+            var password = PasswordBox.Password;
+
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                ShowError("Nincsen felhasználónév vagy jelszó!");
+                return;
+            }
+
+            IsEnabled = false;
+
+            var result = await _apiService.LoginAsync(username, password);
+
+            if (result != null && result.User != null && result.User.Role == "Admin")
+            {
+                var mainWindow = new MainWindow(_apiService);
+                mainWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                ShowError("Hibás felhasználónév vagy jelszó, vagy nincs admin jogosultság!");
+                IsEnabled = true;
+            }
         }
     }
 }
