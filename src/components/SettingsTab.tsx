@@ -1,9 +1,16 @@
+import { use, useEffect } from "react";
 import ImageUpload from "./ImageUpload";
+import { toast } from "sonner";
+import { useQueryClient, type QueryClient } from "@tanstack/react-query";
 
 const API_BASE_URL = "https://cbnncff2-7114.euw.devtunnels.ms/api";
 const token = localStorage.getItem("access");
 
-const editUsername = (props: { username: string; reloadFunc: () => void }) => {
+const editUsername = (props: {
+  username: string;
+  reloadFunc: () => void;
+  queryClient: QueryClient;
+}) => {
   fetch(`${API_BASE_URL}/Auth/me/username`, {
     method: "PUT",
     headers: {
@@ -24,8 +31,9 @@ const editUsername = (props: { username: string; reloadFunc: () => void }) => {
       console.log(data);
       if (data.username != localStorage.getItem("username")) {
         localStorage.setItem("username", data.username);
-        alert("Profil sikeresen módosítva!");
-        props.reloadFunc();
+        toast("Profil sikeresen módosítva!");
+        // props.reloadFunc();
+        props.queryClient.invalidateQueries({ queryKey: ["me"] });
         document.getElementById("alertOverlay")!.style.display = "none";
       }
     })
@@ -49,7 +57,14 @@ const SettingsTab = (props: {
   imageUrl: string;
   username: string;
   reloadFunc: () => void;
+  onClick: () => void;
 }) => {
+  const queryClient = useQueryClient();
+
+  useEffect(() => {
+    console.log(props.imageUrl);
+  }, [props.imageUrl]);
+
   return (
     <div className="settingsTab">
       {/* <img src={props.imageUrl} className="profileImage"/>
@@ -58,6 +73,7 @@ const SettingsTab = (props: {
       <h1 contentEditable id="usernameEdit">
         {props.username}
       </h1>
+      <h3>(Kattints a változtatáshoz)</h3>
       <button
         onClick={() =>
           editUsername({
@@ -65,12 +81,13 @@ const SettingsTab = (props: {
               (document.getElementById("usernameEdit") as HTMLElement)
                 ?.innerText || props.username,
             reloadFunc: props.reloadFunc,
+            queryClient: queryClient,
           })
         }
       >
         Mentés
       </button>
-      <button onClick={cancelButtonHandler}>Mégse</button>
+      <button onClick={props.onClick}>Mégse</button>
     </div>
   );
 };
