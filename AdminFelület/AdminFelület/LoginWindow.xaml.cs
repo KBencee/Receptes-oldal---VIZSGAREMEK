@@ -40,11 +40,7 @@ namespace AdminFelület
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-<<<<<<< HEAD
                 ShowError("Nincsen felhasználónév vagy jelszó!");
-=======
-                ShowError("Kérem, adja meg a felhasználónevet és jelszót.");
->>>>>>> b984e98324e5e84cbde25e9422410b8983cfd868
                 return;
             }
 
@@ -52,11 +48,7 @@ namespace AdminFelület
 
             var result = await _apiService.LoginAsync(username, password);
 
-<<<<<<< HEAD
             if (result != null && result.User != null && result.User.Role == "Admin")
-=======
-            if (result != null && result.User.Role == "Admin")
->>>>>>> b984e98324e5e84cbde25e9422410b8983cfd868
             {
                 var mainWindow = new MainWindow(_apiService);
                 mainWindow.Show();
@@ -64,11 +56,7 @@ namespace AdminFelület
             }
             else
             {
-<<<<<<< HEAD
                 ShowError("Hibás felhasználónév vagy jelszó, vagy nincs admin jogosultság!");
-=======
-                ShowError("Hibás felhasználónév vagy jelszó, vagy nincs admin jogosultság.");
->>>>>>> b984e98324e5e84cbde25e9422410b8983cfd868
                 IsEnabled = true;
             }
         }

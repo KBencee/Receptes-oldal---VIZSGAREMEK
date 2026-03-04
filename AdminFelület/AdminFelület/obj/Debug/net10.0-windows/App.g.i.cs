@@ -41,28 +41,11 @@ namespace AdminFelület {
     public partial class App : System.Windows.Application {
         
         /// <summary>
-<<<<<<< HEAD
-=======
-        /// InitializeComponent
-        /// </summary>
-        [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "10.0.2.0")]
-        public void InitializeComponent() {
-            
-            #line 5 "..\..\..\App.xaml"
-            this.StartupUri = new System.Uri("MainWindow.xaml", System.UriKind.Relative);
-            
-            #line default
-            #line hidden
-        }
-        
-        /// <summary>
->>>>>>> b984e98324e5e84cbde25e9422410b8983cfd868
         /// Application Entry Point.
         /// </summary>
         [System.STAThreadAttribute()]
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "10.0.2.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "10.0.3.0")]
         public static void Main() {
             AdminFelület.App app = new AdminFelület.App();
             app.Run();
