@@ -14,7 +14,8 @@ export type RecipeType = {
     feltoltoUsername: string,
     kepUrl: string,
     cimkek: string[],
-    mentveVan: boolean
+    mentveVan: boolean,
+    likeolvaVan: boolean
 }
 
 export type CommentType = {
@@ -33,6 +34,12 @@ export default function createRecipeQueryOption() {
     })
 }
 
+export function createRecipeByIdQueryOption(id: string) {
+    return queryOptions({
+        queryKey: ['byId', id],
+        queryFn: () => getRecipeById(id)
+    })
+}
 export function createNextRecipeQueryOption(id: string) {
     return queryOptions({
         queryKey: ['next', id],
@@ -59,6 +66,10 @@ const getRecipes = async () : Promise<RecipeType[]> => {
   return await response.data
 }
 
+const getRecipeById = async (id: string) : Promise<RecipeType> => {
+  const response = await axios.get(BASE_URL + `/api/Recept/${id}`)
+  return await response.data
+}
 const getNextRecipe = async (id: string) : Promise<RecipeType> => {
   const response = await axios.get(BASE_URL + `/api/Recept/${id}/next`)
   return await response.data
