@@ -24,8 +24,20 @@
     padding: 1em;
     z-index: 1000;
     border-radius: 2.5em;
+    max-width: 50em;
+}
+
+.settingsTab button{
+    width: 40%;
+    margin: 1em;
 }
 
 button{
     cursor: pointer;
+}
+
+.settingsTab img{
+    width: 16em;
+    height: 16em;
+    border-radius: 2.5em;
 }

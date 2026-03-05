@@ -8,10 +8,12 @@ import Signup from './pages/Signup'
 import ForYou from './pages/ForYou'
 import ContentUpload_ from './pages/ContentUpload_'
 import AuthenticatedUserContextProvider from './context/AuthenticatedUserContextProvider'
+import { Toaster } from 'sonner'
 
 const App = () => {
 	return (
 		<MobileContextProvider>
+			<Toaster />
 		<AuthenticatedUserContextProvider>
 			<BrowserRouter>
 				<Routes>

@@ -8,7 +8,7 @@ import { AuthUserContext } from "../context/AuthenticatedUserContextProvider";
 const API_BASE_URL = "https://cbnncff2-7114.euw.devtunnels.ms";
 
 const ProfileHeadBar = () => {
-  const authUser = useContext(AuthUserContext)
+  const authUser = useContext(AuthUserContext);
   const { data: user } = useQuery({
     queryKey: ["me"],
     queryFn: async () => {
@@ -31,7 +31,9 @@ const ProfileHeadBar = () => {
   };
   return (
     <div className="headBar profileHeadBar">
-      <h1 className="profileName">{localStorage.getItem("username")} receptjei</h1>
+      <h1 className="profileName">
+        {user?.username || localStorage.getItem("username")} receptjei
+      </h1>
       {/* <img src={user?.profileImageUrl} alt={user?.username} className="profileImage"/> */}
       <button
         className="settingsButton"
@@ -51,9 +53,19 @@ const ProfileHeadBar = () => {
         style={{ display: "none" }}
       >
         <SettingsTab
-          imageUrl={authUser?.authUser.profileImageUrl || user?.profileImageUrl || "profile.webp"}
+          imageUrl={
+            authUser?.authUser.profileImageUrl ||
+            user?.profileImageUrl ||
+            "profile.webp"
+          }
           username={authUser?.authUser.username || user?.username || "User"}
           reloadFunc={() => window.location.reload()}
+          onClick={() => {
+            const overlay = document.getElementById("alertOverlay");
+            if (overlay) {
+              overlay.style.display = "none";
+            }
+          }}
         />
       </div>
     </div>

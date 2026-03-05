@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const ImageUpload = ({
@@ -9,6 +9,10 @@ const ImageUpload = ({
   imagePath_?: string
  }) => {
   const [imagePath, setImagePath] = useState<string>(props.imagePath_ || (typeof props.image === "string" ? props.image : ""));
+
+  useEffect(() => {
+    setImagePath(props.imagePath_ || (typeof props.image === "string" ? props.image : ""));
+  }, [props.image, props.imagePath_]);
   return (
     <div
       className={`imageUploadDiv ${props.image ? "has-file" : ""}`}
