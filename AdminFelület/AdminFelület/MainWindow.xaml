@@ -25,7 +25,6 @@
                         <ComboBoxItem Content="Felhasználók"/>
                         <ComboBoxItem Content="Receptek"/>
                         <ComboBoxItem Content="Kommentek"/>
-                        <ComboBoxItem Content="Statisztikák"/>
                     </ComboBox>
                 </StackPanel>
             </Grid>
@@ -44,8 +43,10 @@
                 <StackPanel>
                     <TextBlock Text="Kiválasztott elem:"/>
                     <TextBlock x:Name="SelectedItemTextBlock" Text="Nincs kiválasztott elem." TextWrapping="Wrap"/>
+                    <TextBlock></TextBlock>
                 </StackPanel>
                 <StackPanel>
+                    <TextBlock Text="Statisztikák:" FontWeight="Bold" TextDecorations="Underline"/>
                     <TextBlock x:Name="StatsText" TextWrapping="Wrap"></TextBlock>
                 </StackPanel>
             </StackPanel>
