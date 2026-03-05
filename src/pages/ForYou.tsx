@@ -1,7 +1,7 @@
-import {  useLocation, useNavigate } from "react-router-dom"
-import { createNextRecipeQueryOption, createPrevRecipeQueryOption, type RecipeType } from "../queryOptions/createRecipeQueryOption"
+import {  useLocation, useNavigate, useParams } from "react-router-dom"
+import { createNextRecipeQueryOption, createPrevRecipeQueryOption, createRecipeByIdQueryOption, type RecipeType } from "../queryOptions/createRecipeQueryOption"
 import { useMobileContext } from "../context/MobileContextProvider"
-import { useState } from "react"
+import { useCallback, useState } from "react"
 import { useQuery } from "@tanstack/react-query"
 import styles from '../css/ForYou.module.css'
 import ForYouReel from "../components/ForYouReel"
@@ -16,6 +16,40 @@ const ForYou = () => {
 
     const next = useQuery(createNextRecipeQueryOption(recipe.id))
     const prev = useQuery(createPrevRecipeQueryOption(recipe.id))
+
+    const [touchStart, setTouchStart] = useState<{ x: number } | null>(null);
+    const [touchEnd, setTouchEnd] = useState<{ x: number } | null>(null);
+
+
+
+    const handleTouchStart = useCallback((e: React.TouchEvent) => {
+        setTouchEnd(null);
+        setTouchStart({
+            x: e.touches[0].clientX,
+        });
+    }, []);
+
+    const handleTouchMove = useCallback((e: React.TouchEvent) => {
+        setTouchEnd({
+            x: e.touches[0].clientX,
+        });
+    }, []);
+
+    const handleTouchEnd = useCallback(() => {
+        if (!touchStart || !touchEnd) return;
+
+        const xDiff = touchStart.x - touchEnd.x;
+
+        if (xDiff > 0 && next.data) {
+            setRecipe(next.data as RecipeType)
+        } else if (xDiff < 0 && prev.data) {
+            setRecipe(prev.data as RecipeType)
+        }
+
+        setTouchStart(null);
+        setTouchEnd(null);
+    }, [touchStart, touchEnd, next.data, prev.data]);
+
 
     const navigate = useNavigate()
     const nextFuncion = () => {
@@ -33,7 +67,10 @@ const ForYou = () => {
     
 
   return (
-    <div className={styles.forYou}>
+    <div className={styles.forYou}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}>
         <ForYouReel {...recipe}/>
         { !isMobile &&
             <>

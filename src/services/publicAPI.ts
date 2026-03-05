@@ -18,7 +18,7 @@ export async function loginUser(username: string, password: string) {
     )
 
     if(!response.ok){
-        console.error("Hibás felhasználó név vagy jelszó!");
+        alert("Hibás felhasználó név vagy jelszó!");
         return
     }
     alert("Sikeres bejelentkezés")

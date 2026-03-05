@@ -10,7 +10,7 @@ const RecipeCard = (recipe:RecipeType) => {
   }
 
   return (
-    <div onClick={() => {goToForYou()}} className={styles.recipeCard}>
+      <div onClick={() => {goToForYou()}} className={styles.recipeCard}>
         <img className={styles.myImg} src={recipe.kepUrl ? recipe.kepUrl : "backgroud.jpg"} alt={recipe.nev} title={recipe.nev}/>
         <h2>{recipe.nev}</h2>
         <h3>{recipe.feltoltoUsername}</h3>
@@ -20,9 +20,7 @@ const RecipeCard = (recipe:RecipeType) => {
         <div className={styles.tags}>
             {recipe.cimkek.map((c,idx) => <span key={idx} className={styles.tag}>{c}</span>)}
         </div>
-        <p>
-            <i className={recipe.mentveVan ? "fa-solid fa-bookmark" : "fa-regular fa-bookmark"}></i>
-        </p>
+        <i className={recipe.mentveVan ? "fa-solid fa-bookmark" : "fa-regular fa-bookmark"}></i>
     </div>
   )
 }
