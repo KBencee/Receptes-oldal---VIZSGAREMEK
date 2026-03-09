@@ -15,6 +15,10 @@ const Description = (recipe: RecipeType) => {
     const [comment, setComment] = useState<string>("")
     const postComment = useMutation(createCommentMutationOption(recipe.id, comment))
 
+    const postFunction = () => {
+        postComment.mutateAsync().then(_ => { location.reload() }) 
+    }
+
     return (
         <section className={styles.data}>
             <DescriptionCommentToggleBtn description={isDescription} setDescription={setIsDescription}/>
@@ -44,7 +48,7 @@ const Description = (recipe: RecipeType) => {
                     <h2>Írjon kommentet:</h2>
                     <div className={styles.sendComment}>
                         <input type="text" name="comment" required onChange={(e) => setComment(e.target.value)}/>
-                        <button onClick={() => {postComment.mutate()}}><i className="fa-solid fa-paper-plane fa-xl"></i></button>
+                        <button onClick={postFunction}><i className="fa-solid fa-paper-plane fa-xl"></i></button>
                     </div>
                 </div>
             }

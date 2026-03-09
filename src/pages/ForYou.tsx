@@ -1,4 +1,4 @@
-import {  useLocation, useNavigate, useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { createNextRecipeQueryOption, createPrevRecipeQueryOption, createRecipeByIdQueryOption, type RecipeType } from "../queryOptions/createRecipeQueryOption"
 import { useMobileContext } from "../context/MobileContextProvider"
 import { useCallback, useState } from "react"
@@ -8,19 +8,28 @@ import ForYouReel from "../components/ForYouReel"
 import Description from "../components/Description"
 
 const ForYou = () => {
+    const navigate = useNavigate()
     const {isMobile} = useMobileContext()
-    const location = useLocation()
+    const {id} = useParams()
 
-    const state = location.state.recipe
-    const [recipe, setRecipe] = useState<RecipeType>(state as RecipeType)
+    const mock: RecipeType = {cimkek:[],elkeszitesiIdo:0,feltoltoUsername:"",hozzavalok:"",id:"",kepUrl:"",leiras:"",likeolvaVan:false,likes:0,mentveVan:false, nehezsegiSzint:"",nev:""}
 
-    const next = useQuery(createNextRecipeQueryOption(recipe.id))
-    const prev = useQuery(createPrevRecipeQueryOption(recipe.id))
+    const {data} = useQuery(createRecipeByIdQueryOption(id as string))
+
+    const recipe: RecipeType = data as RecipeType
+
+    const next = useQuery({
+        ...createNextRecipeQueryOption(data?.id as string),
+        enabled: !!data
+    })
+
+    const prev = useQuery({
+        ...createPrevRecipeQueryOption(data?.id as string),
+        enabled: !!data
+    })
 
     const [touchStart, setTouchStart] = useState<{ x: number } | null>(null);
     const [touchEnd, setTouchEnd] = useState<{ x: number } | null>(null);
-
-
 
     const handleTouchStart = useCallback((e: React.TouchEvent) => {
         setTouchEnd(null);
@@ -37,40 +46,37 @@ const ForYou = () => {
 
     const handleTouchEnd = useCallback(() => {
         if (!touchStart || !touchEnd) return;
+        if(!next || !prev) return;
 
         const xDiff = touchStart.x - touchEnd.x;
 
         if (xDiff > 0 && next.data) {
-            setRecipe(next.data as RecipeType)
+            nextFuncion()
         } else if (xDiff < 0 && prev.data) {
-            setRecipe(prev.data as RecipeType)
+            prevFuncion()
         }
 
         setTouchStart(null);
         setTouchEnd(null);
-    }, [touchStart, touchEnd, next.data, prev.data]);
+    }, [touchStart, touchEnd, next, prev]);
 
-
-    const navigate = useNavigate()
     const nextFuncion = () => {
-        navigate("/foryou", {state: {recipe}})
-        setRecipe(next.data as RecipeType)
-        console.log("next: " + next.data?.nev);
+        if(next?.data)
+            navigate("/foryou/" + next.data.id)
     }
     const prevFuncion = () => {
-        navigate("/foryou", {state: {recipe}})
-        setRecipe(prev.data as RecipeType)
-        console.log("prev: " + prev.data?.nev);
+        if(prev?.data)
+            navigate("/foryou/" + prev.data.id)
     }
-
-    console.log("current: " + recipe.nev);
     
-
   return (
+    <>
+    {recipe && next && prev ? 
     <div className={styles.forYou}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}>
+        onTouchEnd={handleTouchEnd}
+        >
         <ForYouReel {...recipe}/>
         { !isMobile &&
             <>
@@ -81,7 +87,21 @@ const ForYou = () => {
                 <Description {...recipe}/>
             </>
         }
+    </div>: 
+    <div className={styles.forYou}>
+        <ForYouReel {...mock}/>
+        { !isMobile &&
+            <>
+                <div className={styles.arrows}>
+                    <i className="fa-solid fa-circle-down fa-rotate-180 fa-xl"></i>
+                    <i className="fa-solid fa-circle-down fa-xl"/>
+                </div>
+                <Description {...mock}/>
+            </>
+        }
     </div>
+    }
+    </>
   )
 }
 
