@@ -9,7 +9,7 @@
 .recipeCard{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     border: 2px solid var(--primary);
     border-radius: var(--border-radius);
     padding: 1.5rem;
@@ -42,4 +42,10 @@
     background-color: var(--secondary);
     border-radius: var(--border-radius);
     padding: 0.5rem;
+}
+
+.cardFooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
