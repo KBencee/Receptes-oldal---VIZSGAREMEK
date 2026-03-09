@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ReceptekWebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0fac4c1bcbdc5f759f6ce3c0c8ea249571c49466")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c6f1481e34ed4367ec35c1c3f048885fc512817")]
 [assembly: System.Reflection.AssemblyProductAttribute("ReceptekWebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ReceptekWebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
