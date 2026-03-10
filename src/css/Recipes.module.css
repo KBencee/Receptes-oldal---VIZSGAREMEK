@@ -17,8 +17,9 @@
     height: 425px;
     cursor: pointer;
     .myImg{
-        max-width: 300px;
-        max-height: 150px;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        object-position: middle;
     }
 }
 
