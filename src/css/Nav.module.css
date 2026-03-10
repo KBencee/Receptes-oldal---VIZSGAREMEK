@@ -8,6 +8,10 @@
 
     div{
         min-width: 88.85px;
+        .logo{
+            scale: 200%;
+            margin: 1rem;
+        }
     }
 
     .middle{

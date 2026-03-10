@@ -80,41 +80,4 @@
         border-radius: var(--border-radius);
         padding: 0.5rem;
     }
-
-    .data{
-        padding: 1rem;
-        text-align: center;
-    }
-    
-    .description{
-        text-align: justify;
-        overflow-y: scroll;
-        scroll-behavior: smooth;
-        scrollbar-width: none;
-    }
-
-    .arrow{
-        text-align: center;
-    }
-
-    .sendComment{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 1rem;
-
-        button{
-            background: none;
-            border: none;
-            color: var(--font);
-        }
-    }
-
-    .comments{
-        height: 60vh;
-        overflow-y: hidden;
-        overflow-y: scroll;
-        scrollbar-width: none;
-        scroll-behavior: smooth;
-    }
 }

@@ -1,13 +1,15 @@
 import { useContext, useState } from 'react'
-import styles from '../css/ForYou.module.css'
+import styles from '../css/Description.module.css'
 import DescriptionCommentToggleBtn from './DescriptionCommentToggleBtn'
 import { AuthUserContext } from '../context/AuthenticatedUserContextProvider'
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { createRecipeCommentsQueryOption, type RecipeType } from '../queryOptions/createRecipeQueryOption'
 import Comment from './Comment'
 import { createCommentMutationOption } from '../mutationOptions/createRegisterMutationOption'
+import { useMobileContext } from '../context/MobileContextProvider'
 
 const Description = (recipe: RecipeType) => {
+    const {isMobile} = useMobileContext()
     const [isDescription, setIsDescription] = useState<boolean>(true)
     const comments = useQuery(createRecipeCommentsQueryOption(recipe.id))
     const authUser = useContext(AuthUserContext)
@@ -20,7 +22,7 @@ const Description = (recipe: RecipeType) => {
     }
 
     return (
-        <section className={styles.data}>
+        <section className={isMobile ? styles.mobile + " " + styles.data : styles.data}>
             <DescriptionCommentToggleBtn description={isDescription} setDescription={setIsDescription}/>
             <h2>{recipe.nev} by {recipe.feltoltoUsername}</h2>
             {isDescription ? 

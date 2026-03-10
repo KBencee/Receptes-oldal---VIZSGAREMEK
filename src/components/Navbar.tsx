@@ -7,7 +7,7 @@ const Navbar = () => {
     const { isMobile } = useMobileContext()
   return (
     <div className={styles.navbar} >
-        {isMobile ? "" : <div>Logo</div>}
+        {isMobile ? "" : <div><img src="my-recipes-logo.png" alt="logo" className={styles.logo}/></div>}
         <NavMiddle/>
         <Profile/>
     </div>
