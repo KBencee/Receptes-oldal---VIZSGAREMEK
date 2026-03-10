@@ -54,11 +54,12 @@ const ProfileHeadBar = () => {
       >
         <SettingsTab
           imageUrl={
-            authUser?.authUser.profileImageUrl ||
             user?.profileImageUrl ||
+            localStorage.getItem("profileImageUrl") ||
+            authUser?.authUser.profileImageUrl ||
             "profile.webp"
           }
-          username={authUser?.authUser.username || user?.username || "User"}
+          username={user?.username || authUser?.authUser.username ||  "User"}
           reloadFunc={() => window.location.reload()}
           onClick={() => {
             const overlay = document.getElementById("alertOverlay");
