@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kiss.bence\\Documents\\Receptes-oldal-BACKEND---VIZSGAREMEK\\ReceptekWebAPI\\ReceptekWebAPI\\ReceptekWebAPI.csproj": {}
+    "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\ReceptekWebAPI\\ReceptekWebAPI\\ReceptekWebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kiss.bence\\Documents\\Receptes-oldal-BACKEND---VIZSGAREMEK\\ReceptekWebAPI\\ReceptekWebAPI\\ReceptekWebAPI.csproj": {
+    "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\ReceptekWebAPI\\ReceptekWebAPI\\ReceptekWebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kiss.bence\\Documents\\Receptes-oldal-BACKEND---VIZSGAREMEK\\ReceptekWebAPI\\ReceptekWebAPI\\ReceptekWebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\ReceptekWebAPI\\ReceptekWebAPI\\ReceptekWebAPI.csproj",
         "projectName": "ReceptekWebAPI",
-        "projectPath": "C:\\Users\\kiss.bence\\Documents\\Receptes-oldal-BACKEND---VIZSGAREMEK\\ReceptekWebAPI\\ReceptekWebAPI\\ReceptekWebAPI.csproj",
-        "packagesPath": "C:\\Users\\kiss.bence\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kiss.bence\\Documents\\Receptes-oldal-BACKEND---VIZSGAREMEK\\ReceptekWebAPI\\ReceptekWebAPI\\obj\\",
+        "projectPath": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\ReceptekWebAPI\\ReceptekWebAPI\\ReceptekWebAPI.csproj",
+        "packagesPath": "C:\\Users\\kissb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kissb\\OneDrive\\Dokumentumok\\Receptes-oldal-BACKEND---VIZSGAREMEK\\ReceptekWebAPI\\ReceptekWebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\kiss.bence\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kissb\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -108,7 +108,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

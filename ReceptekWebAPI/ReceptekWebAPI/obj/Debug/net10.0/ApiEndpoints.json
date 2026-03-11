@@ -27,6 +27,181 @@
   },
   {
     "ContainingType": "ReceptekWebAPI.Controllers.AuthController",
+    "Method": "GetAllCimkek",
+    "RelativePath": "api/Auth/admin/cimkek",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ReceptekWebAPI.Models.AdminCimkeDto, ReceptekWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ReceptekWebAPI.Controllers.AuthController",
+    "Method": "UpdateCimke",
+    "RelativePath": "api/Auth/admin/cimkek/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "ReceptekWebAPI.Models.CimkeUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReceptekWebAPI.Controllers.AuthController",
+    "Method": "DeleteCimke",
+    "RelativePath": "api/Auth/admin/cimkek/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReceptekWebAPI.Controllers.AuthController",
+    "Method": "GetAllKommentek",
+    "RelativePath": "api/Auth/admin/kommentek",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ReceptekWebAPI.Models.AdminKommentDto, ReceptekWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ReceptekWebAPI.Controllers.AuthController",
+    "Method": "UpdateKomment",
+    "RelativePath": "api/Auth/admin/kommentek/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "ReceptekWebAPI.Models.KommentUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReceptekWebAPI.Controllers.AuthController",
+    "Method": "GetAllLikes",
+    "RelativePath": "api/Auth/admin/likes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ReceptekWebAPI.Models.AdminLikeDto, ReceptekWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ReceptekWebAPI.Controllers.AuthController",
+    "Method": "DeleteMentettRecept",
+    "RelativePath": "api/Auth/admin/mentett-receptek/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReceptekWebAPI.Controllers.AuthController",
+    "Method": "GetAllReceptCimkek",
+    "RelativePath": "api/Auth/admin/recept-cimkek",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ReceptekWebAPI.Models.AdminReceptCimkeDto, ReceptekWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ReceptekWebAPI.Controllers.AuthController",
+    "Method": "UpdateRecept",
+    "RelativePath": "api/Auth/admin/receptek/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "ReceptekWebAPI.Models.ReceptUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ReceptekWebAPI.Controllers.AuthController",
     "Method": "GetAdminStats",
     "RelativePath": "api/Auth/admin/stats",
     "HttpMethod": "GET",

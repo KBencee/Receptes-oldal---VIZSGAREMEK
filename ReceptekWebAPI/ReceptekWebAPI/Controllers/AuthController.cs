@@ -412,5 +412,158 @@ namespace ReceptekWebAPI.Controllers
             };
             return Ok(stats);
         }
+
+        [HttpPut("admin/receptek/{id:guid}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult> UpdateRecept(Guid id, [FromBody] ReceptUpdateDto dto)
+        {
+            var recept = await _context.Receptek.FindAsync(id);
+            if (recept == null) return NotFound();
+
+            if (!string.IsNullOrEmpty(dto.Nev)) recept.Nev = dto.Nev;
+            if (!string.IsNullOrEmpty(dto.Leiras)) recept.Leiras = dto.Leiras;
+            if (!string.IsNullOrEmpty(dto.Hozzavalok)) recept.Hozzavalok = dto.Hozzavalok;
+            if (dto.ElkeszitesiIdo > 0) recept.ElkeszitesiIdo = dto.ElkeszitesiIdo;
+            if (!string.IsNullOrEmpty(dto.NehezsegiSzint)) recept.NehezsegiSzint = dto.NehezsegiSzint;
+
+            await _context.SaveChangesAsync();
+            return Ok(new { message = "Recept frissítve" });
+        }
+
+        [HttpGet("admin/cimkek")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult<List<AdminCimkeDto>>> GetAllCimkek()
+        {
+            var cimkek = await _context.Cimkek
+                .Select(c => new AdminCimkeDto
+                {
+                    Id = c.CimkeId,
+                    CimkeNev = c.CimkeNev,
+                    ReceptekSzama = c.ReceptCimkek.Count
+                })
+                .ToListAsync();
+
+            return Ok(cimkek);
+        }
+
+        [HttpPut("admin/cimkek/{id:int}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult> UpdateCimke(int id, [FromBody] CimkeUpdateDto dto)
+        {
+            var cimke = await _context.Cimkek.FindAsync(id);
+            if (cimke == null) return NotFound();
+
+            if (!string.IsNullOrEmpty(dto.CimkeNev))
+                cimke.CimkeNev = dto.CimkeNev;
+
+            await _context.SaveChangesAsync();
+            return Ok(new { message = "Címke frissítve" });
+        }
+
+        [HttpGet("admin/kommentek")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult<List<AdminKommentDto>>> GetAllKommentek()
+        {
+            var kommentek = await _context.ReceptKommentek
+                .Include(k => k.User)
+                .Include(k => k.Recept)
+                .OrderByDescending(k => k.IrtaEkkor)
+                .Select(k => new AdminKommentDto
+                {
+                    Id = k.Id,
+                    Szoveg = k.Szoveg,
+                    IrtaEkkor = k.IrtaEkkor,
+                    Username = k.User.Username,
+                    UserId = k.UserId,
+                    ReceptNev = k.Recept.Nev,
+                    ReceptId = k.ReceptId
+                })
+                .ToListAsync();
+
+            return Ok(kommentek);
+        }
+
+        [HttpPut("admin/kommentek/{id:guid}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult> UpdateKomment(Guid id, [FromBody] KommentUpdateDto dto)
+        {
+            var komment = await _context.ReceptKommentek.FindAsync(id);
+            if (komment == null) return NotFound();
+
+            if (!string.IsNullOrEmpty(dto.Szoveg))
+                komment.Szoveg = dto.Szoveg;
+
+            await _context.SaveChangesAsync();
+            return Ok(new { message = "Komment frissítve" });
+        }
+
+        [HttpGet("admin/likes")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult<List<AdminLikeDto>>> GetAllLikes()
+        {
+            var likes = await _context.Likes
+                .Include(l => l.User)
+                .Include(l => l.Recept)
+                .OrderByDescending(l => l.LikeoltaEkkor)
+                .Select(l => new AdminLikeDto
+                {
+                    Username = l.User.Username,
+                    UserId = l.UserId,
+                    ReceptNev = l.Recept.Nev,
+                    ReceptId = l.ReceptId,
+                    LikeoltaEkkor = l.LikeoltaEkkor
+                })
+                .ToListAsync();
+
+            return Ok(likes);
+        }
+
+        [HttpGet("admin/recept-cimkek")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult<List<AdminReceptCimkeDto>>> GetAllReceptCimkek()
+        {
+            var kapcsolatok = await _context.ReceptCimkek
+                .Include(rc => rc.Recept)
+                .Include(rc => rc.Cimke)
+                .Select(rc => new AdminReceptCimkeDto
+                {
+                    ReceptId = rc.ReceptId,
+                    CimkeId = rc.CimkeId,
+                    ReceptNev = rc.Recept.Nev,
+                    CimkeNev = rc.Cimke.CimkeNev
+                })
+                .ToListAsync();
+
+            return Ok(kapcsolatok);
+        }
+
+        [HttpDelete("admin/cimkek/{id:int}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult> DeleteCimke(int id)
+        {
+            var cimke = await _context.Cimkek.FindAsync(id);
+            if (cimke == null)
+                return NotFound("Nem található cimke.");
+
+            _context.Cimkek.Remove(cimke);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Cimke törölve." });
+        }
+
+        [HttpDelete("admin/mentett-receptek/{id:guid}")]
+        [Authorize(Roles ="Admin")]
+        public async Task<ActionResult> DeleteMentettRecept(Guid id)
+        {
+            var mentett = await _context.MentettReceptek.FindAsync(id);
+
+            if (mentett == null)
+                return NotFound("Nem található a recept");
+
+            _context.MentettReceptek.Remove(mentett);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Mentett recept törölve" });
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using AdminFelület.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
@@ -112,6 +113,25 @@ namespace AdminFelület.Services
             }
         }
 
+        public async Task<bool> UpdateReceptAsync(ReceptModel recept)
+        {
+            try
+            {
+                SetAuthHeader();
+                var dto = new
+                {
+                    recept.Nev,
+                    recept.Leiras,
+                    recept.Hozzavalok,
+                    recept.ElkeszitesiIdo,
+                    recept.NehezsegiSzint
+                };
+                var response = await _httpClient.PutAsJsonAsync($"Auth/admin/receptek/{recept.Id}", dto);
+                return response.IsSuccessStatusCode;
+            }
+            catch { return false; }
+        }
+
         public async Task<bool> DeleteReceptAsync(Guid id)
         {
             try
@@ -138,6 +158,18 @@ namespace AdminFelület.Services
             {
                 return new List<UserModel>();
             }
+        }
+
+        public async Task<bool> UpdateUserAsync(UserModel user)
+        {
+            try
+            {
+                SetAuthHeader();
+                var dto = new { Username = user.Username, Role = user.Role };
+                var response = await _httpClient.PutAsJsonAsync($"Auth/admin/users/{user.Id}", dto);
+                return response.IsSuccessStatusCode;
+            }
+            catch { return false; }
         }
 
         public async Task<bool> ChangeRoleAsync(Guid userId, string newRole)
@@ -167,30 +199,150 @@ namespace AdminFelület.Services
             }
         }
 
-        public async Task<List<KommentModel>> GetKommentekAsync(Guid receptId)
-        {
-            try
-            {
-                var kommentek = await _httpClient.GetFromJsonAsync<List<KommentModel>>($"Komment/recept/{receptId}");
-                return kommentek ?? new List<KommentModel>();
-            }
-            catch
-            {
-                return new List<KommentModel>();
-            }
-        }
-
-        public async Task<bool> DeleteKommentAsync(Guid kommentId)
+        public async Task<List<CimkeModel>> GetCimkekAsync()
         {
             try
             {
                 SetAuthHeader();
-                var response = await _httpClient.DeleteAsync($"Komment/{kommentId}");
+                return await _httpClient.GetFromJsonAsync<List<CimkeModel>>("Auth/admin/cimkek")
+                    ?? new List<CimkeModel>();
+            }
+            catch { return new List<CimkeModel>(); }
+        }
+
+        public async Task<bool> UpdateCimkeAsync(CimkeModel cimke)
+        {
+            try
+            {
+                SetAuthHeader();
+                var dto = new { CimkeNev = cimke.CimkeNev };
+                var response = await _httpClient.PutAsJsonAsync($"Auth/admin/cimkek/{cimke.Id}", dto);
                 return response.IsSuccessStatusCode;
             }
-            catch
+            catch { return false; }
+        }
+
+        public async Task<bool> DeleteCimkeAsync(int id)
+        {
+            try
             {
-                return false;
+                SetAuthHeader();
+                var response = await _httpClient.DeleteAsync($"Auth/admin/cimkek/{id}");
+                return response.IsSuccessStatusCode;
+            }
+            catch { return false; }
+        }
+
+        public async Task<List<KommentModel>> GetAllKommentekAsync()
+        {
+            try
+            {
+                SetAuthHeader();
+                var result = await _httpClient.GetFromJsonAsync<List<KommentModel>>("Auth/admin/kommentek") ?? new List<KommentModel>();
+
+                Debug.WriteLine($"GetAllKommentekAsync: {result.Count} elem kapott");
+                if (result.Count > 0)
+                    Debug.WriteLine($"Első komment: Username='{result[0].Username}', ReceptNev='{result[0].ReceptNev}'");
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"GetAllKommentekAsync hiba: {ex.Message}");
+                return new List<KommentModel>();
+            }
+        }
+        public async Task<bool> UpdateKommentAsync(KommentModel komment)
+        {
+            try
+            {
+                SetAuthHeader();
+                var dto = new { Szoveg = komment.Szoveg };
+                var response = await _httpClient.PutAsJsonAsync($"Auth/admin/kommentek/{komment.Id}", dto);
+                return response.IsSuccessStatusCode;
+            }
+            catch { return false; }
+        }
+
+        public async Task<bool> DeleteKommentAsync(Guid id)
+        {
+            try
+            {
+                SetAuthHeader();
+                var response = await _httpClient.DeleteAsync($"Komment/{id}");
+                return response.IsSuccessStatusCode;
+            }
+            catch { return false; }
+        }
+
+        public async Task<List<MentettReceptModel>> GetMentettReceptekAsync()
+        {
+            try
+            {
+                SetAuthHeader();
+                var result = await _httpClient.GetFromJsonAsync<List<MentettReceptModel>>("Auth/admin/mentett-receptek") ?? new List<MentettReceptModel>();
+
+                Debug.WriteLine($"GetMentettReceptekAsync: {result.Count} elem kapott");
+                if (result.Count > 0)
+                    Debug.WriteLine($"Első elem: Username='{result[0].Username}', ReceptNev='{result[0].ReceptNev}'");
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"GetMentettReceptekAsync hiba: {ex.Message}");
+                return new List<MentettReceptModel>();
+            }
+        }
+
+        public async Task<bool> DeleteMentettReceptAsync(Guid id)
+        {
+            try
+            {
+                SetAuthHeader();
+                var response = await _httpClient.DeleteAsync($"Auth/admin/mentett-receptek/{id}");
+                return response.IsSuccessStatusCode;
+            }
+            catch { return false; }
+        }
+
+        public async Task<List<LikeModel>> GetLikesAsync()
+        {
+            try
+            {
+                SetAuthHeader();
+                var result = await _httpClient.GetFromJsonAsync<List<LikeModel>>("Auth/admin/likes") ?? new List<LikeModel>();
+
+                Debug.WriteLine($"GetLikesAsync: {result.Count} elem kapott");
+                if (result.Count > 0)
+                    Debug.WriteLine($"Első like: Username='{result[0].Username}', ReceptNev='{result[0].ReceptNev}'");
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"GetLikesAsync hiba: {ex.Message}");
+                return new List<LikeModel>();
+            }
+        }
+
+        public async Task<List<ReceptCimkeModel>> GetReceptCimkekAsync()
+        {
+            try
+            {
+                SetAuthHeader();
+                var result = await _httpClient.GetFromJsonAsync<List<ReceptCimkeModel>>("Auth/admin/recept-cimkek") ?? new List<ReceptCimkeModel>();
+
+                Debug.WriteLine($"GetReceptCimkekAsync: {result.Count} elem kapott");
+                if (result.Count > 0)
+                    Debug.WriteLine($"Első elem: ReceptNev='{result[0].ReceptNev}', CimkeNev='{result[0].CimkeNev}'");
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"GetReceptCimkekAsync hiba: {ex.Message}");
+                return new List<ReceptCimkeModel>();
             }
         }
 

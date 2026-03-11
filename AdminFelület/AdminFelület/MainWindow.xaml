@@ -22,9 +22,13 @@
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <ComboBox x:Name="ViewSelector" Width="150" Height="30">
-                        <ComboBoxItem Content="Felhasználók"/>
+                        <ComboBoxItem Content="Felhasználók" IsSelected="True"/>
                         <ComboBoxItem Content="Receptek"/>
+                        <ComboBoxItem Content="Cimkék"/>
                         <ComboBoxItem Content="Kommentek"/>
+                        <ComboBoxItem Content="Mentett receptek"/>
+                        <ComboBoxItem Content="Like-ok"/>
+                        <ComboBoxItem Content="Recept-Címke kapcsolatok"/>
                     </ComboBox>
                 </StackPanel>
             </Grid>
@@ -50,7 +54,7 @@
                     <TextBlock x:Name="StatsText" TextWrapping="Wrap"></TextBlock>
                 </StackPanel>
             </StackPanel>
-            <DataGrid x:Name="DataGrid" AutoGenerateColumns="False" SelectionMode="Single" SelectionChanged="DataGrid_SelectionChanged" Grid.RowSpan="2"/>
+            <DataGrid x:Name="DataGrid" AutoGenerateColumns="False" IsReadOnly="False" SelectionMode="Single" SelectionChanged="DataGrid_SelectionChanged" Grid.RowSpan="2"/>
         </Grid>
     </Grid>
 </Window>
