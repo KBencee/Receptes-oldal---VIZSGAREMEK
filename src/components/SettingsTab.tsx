@@ -31,10 +31,9 @@ const editUsername = (props: {
       console.log(data);
       if (data.username != localStorage.getItem("username")) {
         localStorage.setItem("username", data.username);
-        toast("Profil sikeresen módosítva!");
+        console.log("Username updated to:", data.username);
         // props.reloadFunc();
         props.queryClient.invalidateQueries({ queryKey: ["me"] });
-        document.getElementById("alertOverlay")!.style.display = "none";
       }
     })
     .catch((error) => {
@@ -43,14 +42,75 @@ const editUsername = (props: {
 };
 
 const editProfilePicture = (props: {
-  image: string;
+  image: File | string;
   reloadFunc: () => void;
-}) => {};
+  queryClient: QueryClient;
+}) => {
+  const formData = new FormData();
+  fetch(
+    typeof props.image === "string"
+      ? props.image
+      : URL.createObjectURL(props.image)
+  ).then((res) =>
+    res.blob().then((blob) => {
+      formData.append("Kep", blob);
+      fetch(`${API_BASE_URL}/Auth/profilkep`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData,
+      })
+        .then(async (response) => {
+          if (!response.ok) {
+            throw new Error("Profilkép módosítása sikertelen");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          if (data.profileImageUrl != localStorage.getItem("profileImageUrl")) {
+            localStorage.setItem("profileImageUrl", data.profileImageUrl);
+            console.log("Profile picture updated to:", data.profileImageUrl);
+            // props.reloadFunc();
+            props.queryClient.invalidateQueries({ queryKey: ["me"] });
+          }
+        })
+        .catch((error) => {
+          console.error("Profilkép módosítása sikertelen:", error);
+        });
+    })
+  );
+};
 
 const cancelButtonHandler = () => {
   const overlay = document.getElementById("alertOverlay");
   if (overlay) {
   }
+};
+
+const saveButtonHandler = (props: {
+  username: string;
+  image: File | string;
+  reloadFunc: () => void;
+  queryClient: QueryClient;
+}) => {
+  editUsername({
+    username:
+      (document.getElementById("usernameEdit") as HTMLElement)?.innerText ||
+      props.username,
+    reloadFunc: props.reloadFunc,
+    queryClient: props.queryClient,
+  });
+  editProfilePicture({
+    image:
+      (document.getElementById("imagePreview") as HTMLImageElement)?.src ||
+      props.image,
+    reloadFunc: props.reloadFunc,
+    queryClient: props.queryClient,
+  });
+  toast.success("Profil sikeresen módosítva!");
+  document.getElementById("alertOverlay")!.style.display = "none";
 };
 
 const SettingsTab = (props: {
@@ -76,10 +136,9 @@ const SettingsTab = (props: {
       <h3>(Kattints a változtatáshoz)</h3>
       <button
         onClick={() =>
-          editUsername({
-            username:
-              (document.getElementById("usernameEdit") as HTMLElement)
-                ?.innerText || props.username,
+          saveButtonHandler({
+            username: props.username,
+            image: props.imageUrl,
             reloadFunc: props.reloadFunc,
             queryClient: queryClient,
           })
