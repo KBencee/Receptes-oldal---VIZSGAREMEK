@@ -41,3 +41,7 @@ button{
     height: 16em;
     border-radius: 2.5em;
 }
+
+.savedHeadBar {
+    margin-bottom: 2em;
+}

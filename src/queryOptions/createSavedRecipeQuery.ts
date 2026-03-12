@@ -18,7 +18,7 @@ api.interceptors.request.use((config) => {
 
 export default function createRecipeQueryOption() {
     return queryOptions({
-        queryKey: ['recipes', 'me'],
+        queryKey: ['recipes', 'me', 'saved'],
         queryFn: getRecipes
     })
 }
@@ -45,7 +45,7 @@ export function createRecipeCommentsQueryOption(id: string) {
 }
 
 export const getRecipes = async () : Promise<RecipeType[]> => {
-  const response = await api.get("/api/Recept/my-recipes")
+  const response = await api.get("/api/user/me/saved")
   return await response.data
 }
 

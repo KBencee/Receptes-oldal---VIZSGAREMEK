@@ -56,7 +56,7 @@ function ContentUpload_() {
       tags: trueTagList,
       ingredients: ingredients,
     };
-    // postUpload(temp);
+    postUpload(temp);
   };
 
   const notReadyClick = () => {
