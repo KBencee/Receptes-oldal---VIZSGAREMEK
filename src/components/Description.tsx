@@ -3,9 +3,10 @@ import styles from '../css/Description.module.css'
 import DescriptionCommentToggleBtn from './DescriptionCommentToggleBtn'
 import { AuthUserContext } from '../context/AuthenticatedUserContextProvider'
 import { useMutation, useQuery } from '@tanstack/react-query'
-import { createRecipeCommentsQueryOption, type RecipeType } from '../queryOptions/createRecipeQueryOption'
+import { createRecipeCommentsQueryOption } from '../queryOptions/createRecipeQueryOption'
 import Comment from './Comment'
 import { createCommentMutationOption } from '../mutationOptions/createRegisterMutationOption'
+import type { RecipeType } from '../types/RecipeTypes'
 
 const Description = (recipe: RecipeType) => {
     const [isDescription, setIsDescription] = useState<boolean>(true)

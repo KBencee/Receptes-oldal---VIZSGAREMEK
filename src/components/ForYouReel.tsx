@@ -1,12 +1,12 @@
 import { useMobileContext } from '../context/MobileContextProvider'
 import HomeBtn from './HomeBtn'
 import styles from '../css/ForYou.module.css'
-import { type RecipeType } from '../queryOptions/createRecipeQueryOption'
 import { createLikeMutationOption, createUnlikeMutationOption } from '../mutationOptions/createRegisterMutationOption'
 import { useMutation } from '@tanstack/react-query'
 import { useContext, useEffect, useState } from 'react'
 import { AuthUserContext } from '../context/AuthenticatedUserContextProvider'
 import { Link } from 'react-router-dom'
+import type { RecipeType } from '../types/RecipeTypes'
 
 const ForYouReel = (recipe:RecipeType) => {
     const {isMobile} = useMobileContext()

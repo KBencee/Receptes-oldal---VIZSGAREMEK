@@ -1,11 +1,12 @@
 import { useNavigate, useParams } from "react-router-dom"
-import { createNextRecipeQueryOption, createPrevRecipeQueryOption, createRecipeByIdQueryOption, type RecipeType } from "../queryOptions/createRecipeQueryOption"
+import { createNextRecipeQueryOption, createPrevRecipeQueryOption, createRecipeByIdQueryOption } from "../queryOptions/createRecipeQueryOption"
 import { useMobileContext } from "../context/MobileContextProvider"
 import { useCallback, useState } from "react"
 import { useQuery } from "@tanstack/react-query"
 import styles from '../css/ForYou.module.css'
 import ForYouReel from "../components/ForYouReel"
 import Description from "../components/Description"
+import type { RecipeType } from "../types/RecipeTypes"
 
 const ForYou = () => {
     const navigate = useNavigate()
