@@ -65,6 +65,10 @@
         i{
             scale: 2;
         }
+
+        a{
+            color: var(--font);
+        }
     }
 
     .tags{

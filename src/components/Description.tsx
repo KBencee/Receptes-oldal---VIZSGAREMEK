@@ -6,10 +6,8 @@ import { useMutation, useQuery } from '@tanstack/react-query'
 import { createRecipeCommentsQueryOption, type RecipeType } from '../queryOptions/createRecipeQueryOption'
 import Comment from './Comment'
 import { createCommentMutationOption } from '../mutationOptions/createRegisterMutationOption'
-import { useMobileContext } from '../context/MobileContextProvider'
 
 const Description = (recipe: RecipeType) => {
-    const {isMobile} = useMobileContext()
     const [isDescription, setIsDescription] = useState<boolean>(true)
     const comments = useQuery(createRecipeCommentsQueryOption(recipe.id))
     const authUser = useContext(AuthUserContext)
@@ -22,7 +20,7 @@ const Description = (recipe: RecipeType) => {
     }
 
     return (
-        <section className={isMobile ? styles.mobile + " " + styles.data : styles.data}>
+        <section className={styles.data}>
             <DescriptionCommentToggleBtn description={isDescription} setDescription={setIsDescription}/>
             <h2>{recipe.nev} by {recipe.feltoltoUsername}</h2>
             {isDescription ? 
@@ -31,9 +29,7 @@ const Description = (recipe: RecipeType) => {
                     <h3>Hozzávalók:</h3>
                     <p>{recipe.hozzavalok}</p>
                     <h3>Leírás:</h3>
-                    <div className={styles.description}>
-                        <p>{recipe.leiras}</p>
-                    </div>
+                    <p className={styles.description}>{recipe.leiras}</p>
                     <div className={styles.arrow}>
                         <i className="fa-solid fa-angle-down fa-bounce"></i>
                     </div>

@@ -67,39 +67,39 @@ const ForYou = () => {
     const prevFuncion = () => {
         if(prev?.data)
             navigate("/foryou/" + prev.data.id)
-    }
-    
+    }    
+
   return (
     <>
     {recipe && next && prev ? 
-    <div className={styles.forYou}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
+        <div className={styles.forYou}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
         >
-        <ForYouReel {...recipe}/>
-        { !isMobile &&
-            <>
-                <div className={styles.arrows}>
-                    <i className="fa-solid fa-circle-down fa-rotate-180 fa-xl" onClick={() => {nextFuncion()}}></i>
-                    <i className="fa-solid fa-circle-down fa-xl" onClick={() => {prevFuncion()}}/>
-                </div>
-                <Description {...recipe}/>
-            </>
-        }
-    </div>: 
-    <div className={styles.forYou}>
-        <ForYouReel {...mock}/>
-        { !isMobile &&
-            <>
-                <div className={styles.arrows}>
-                    <i className="fa-solid fa-circle-down fa-rotate-180 fa-xl"></i>
-                    <i className="fa-solid fa-circle-down fa-xl"/>
-                </div>
-                <Description {...mock}/>
-            </>
-        }
-    </div>
+            <ForYouReel {...recipe}/>
+            { !isMobile &&
+                <>
+                    <div className={styles.arrows}>
+                        <i className="fa-solid fa-circle-down fa-rotate-180 fa-xl" onClick={() => {nextFuncion()}}></i>
+                        <i className="fa-solid fa-circle-down fa-xl" onClick={() => {prevFuncion()}}/>
+                    </div>
+                    <Description {...recipe}/>
+                </>
+            }
+        </div>: 
+        <div className={styles.forYou}>
+            <ForYouReel {...mock}/>
+            { !isMobile &&
+                <>
+                    <div className={styles.arrows}>
+                        <i className="fa-solid fa-circle-down fa-rotate-180 fa-xl"></i>
+                        <i className="fa-solid fa-circle-down fa-xl"/>
+                    </div>
+                    <Description {...mock}/>
+                </>
+            }
+        </div>
     }
     </>
   )

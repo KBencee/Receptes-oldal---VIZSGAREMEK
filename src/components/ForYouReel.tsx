@@ -6,7 +6,7 @@ import { createLikeMutationOption, createUnlikeMutationOption } from '../mutatio
 import { useMutation } from '@tanstack/react-query'
 import { useContext, useEffect, useState } from 'react'
 import { AuthUserContext } from '../context/AuthenticatedUserContextProvider'
-
+import { Link } from 'react-router-dom'
 
 const ForYouReel = (recipe:RecipeType) => {
     const {isMobile} = useMobileContext()
@@ -41,8 +41,6 @@ const ForYouReel = (recipe:RecipeType) => {
         setLikes(recipe.likes)
     }, [recipe])
 
-
-
     return (
     <section className={isMobile ? styles.mobileSection : ""}>
         <div className={styles.forYouHead}><HomeBtn/><span>{recipe.nev}</span></div>
@@ -54,7 +52,7 @@ const ForYouReel = (recipe:RecipeType) => {
             </div>
             <i className="fa-regular fa-bookmark"></i>
             <i className="fa-solid fa-share"></i>
-            {isMobile ? <i className="fa-solid fa-ellipsis"></i> : ""}
+            {isMobile ? <Link to={"/description/" + recipe.id}><i className="fa-solid fa-ellipsis"></i></Link> : ""}
         </aside>
         <div className={styles.tags}>
             {recipe.cimkek.map((c,idx) => <span key={idx} className={styles.tag}>{c}</span>)}
