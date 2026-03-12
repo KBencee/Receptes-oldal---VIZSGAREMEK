@@ -34,7 +34,6 @@ const ProfileHeadBar = () => {
       <h1 className="profileName">
         {user?.username || localStorage.getItem("username")} receptjei
       </h1>
-      {/* <img src={user?.profileImageUrl} alt={user?.username} className="profileImage"/> */}
       <button
         className="settingsButton"
         title="Settings"

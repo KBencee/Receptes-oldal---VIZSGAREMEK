@@ -17,7 +17,7 @@ const OwnRecipes = () => {
                 {isError && <h1>Hiba történt a receptek betöltésekor.</h1>}
 
                 {data && data.length > 0 ? (
-                    data.map((recipe) => (
+                    data?.map((recipe) => (
                         <RecipeCard {...recipe} key={recipe.id} />
                     ))
                 ) : (
