@@ -8,12 +8,11 @@ import Signup from './pages/Signup'
 import ForYou from './pages/ForYou'
 import ContentUpload_ from './pages/ContentUpload_'
 import AuthenticatedUserContextProvider from './context/AuthenticatedUserContextProvider'
-import { Toaster } from 'sonner'
+import MobileDescription from './components/MobileDescription'
 
 const App = () => {
 	return (
 		<MobileContextProvider>
-			<Toaster />
 		<AuthenticatedUserContextProvider>
 			<BrowserRouter>
 				<Routes>
@@ -23,7 +22,8 @@ const App = () => {
 					<Route path='/saved' element={<Saved/>}/>
 					<Route path='/login' element={<Login/>}/>
 					<Route path='/signup' element={<Signup/>}/>
-					<Route path='/foryou' element={<ForYou/>}/>
+					<Route path='/foryou/:id' element={<ForYou/>}/>
+					<Route path='/description/:id' element={<MobileDescription/>}/>
 				</Routes>
 			</BrowserRouter>
 		</AuthenticatedUserContextProvider>
