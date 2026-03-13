@@ -1,4 +1,4 @@
-import { use, useEffect } from "react";
+import { useEffect } from "react";
 import ImageUpload from "./ImageUpload";
 import { toast } from "sonner";
 import { useQueryClient, type QueryClient } from "@tanstack/react-query";
@@ -32,7 +32,6 @@ const editUsername = (props: {
       if (data.username != localStorage.getItem("username")) {
         localStorage.setItem("username", data.username);
         console.log("Username updated to:", data.username);
-        // props.reloadFunc();
         props.queryClient.invalidateQueries({ queryKey: ["me"] });
       }
     })
@@ -72,7 +71,6 @@ const editProfilePicture = (props: {
           if (data.profileImageUrl != localStorage.getItem("profileImageUrl")) {
             localStorage.setItem("profileImageUrl", data.profileImageUrl);
             console.log("Profile picture updated to:", data.profileImageUrl);
-            // props.reloadFunc();
             props.queryClient.invalidateQueries({ queryKey: ["me"] });
           }
         })
@@ -81,12 +79,6 @@ const editProfilePicture = (props: {
         });
     })
   );
-};
-
-const cancelButtonHandler = () => {
-  const overlay = document.getElementById("alertOverlay");
-  if (overlay) {
-  }
 };
 
 const saveButtonHandler = (props: {
@@ -127,8 +119,6 @@ const SettingsTab = (props: {
 
   return (
     <div className="settingsTab">
-      {/* <img src={props.imageUrl} className="profileImage"/>
-       */}
       <ImageUpload image={props.imageUrl} setImage={() => {}} />
       <h1 contentEditable id="usernameEdit">
         {props.username}

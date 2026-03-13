@@ -2,6 +2,9 @@ import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthUserContext } from '../context/AuthenticatedUserContextProvider'
 import styles from '../css/Profile.module.css'
+import { useQuery } from '@tanstack/react-query'
+
+const API_BASE_URL = "https://cbnncff2-7114.euw.devtunnels.ms";
 
 const Profile = () => {
     const authUser = useContext(AuthUserContext)
@@ -9,6 +12,18 @@ const Profile = () => {
 		localStorage.clear()
 		window.location.reload()
 	} 
+	const { data: user } = useQuery({
+    queryKey: ["me"],
+    queryFn: async () => {
+      const res = await fetch(API_BASE_URL + "/api/Auth/me", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("access")}`,
+        },
+      });
+      if (!res.ok) throw new Error("Failed to fetch user");
+      return res.json();
+    },
+  });
 
   return (
     <div className={styles.profile}>
@@ -16,11 +31,11 @@ const Profile = () => {
         {!authUser ? 
         	<Link to="/login" style={{textAlign:"right"}}>Bejelentkezés</Link> 
 			: 
-			<img src={authUser.authUser.profileImageUrl ? 
-				authUser.authUser.profileImageUrl 
+			<img src={user?.profileImageUrl ? 
+				user.profileImageUrl 
 				: 
 				"profile.webp"} 
-				alt={authUser.authUser.username} title={authUser.authUser.username}
+				alt={user?.username} title={user?.username}
 			/>}
     </div>
   )
