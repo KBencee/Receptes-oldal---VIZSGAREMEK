@@ -35,7 +35,7 @@
         height: 90vh;
         border: 0.5rem solid var(--secondary);
         border-radius: var(--border-radius);
-
+        box-shadow: 0 0.5rem 1rem 0 var(--font);
         img{
             aspect-ratio: 4 / 3;
             object-fit: cover;
@@ -47,8 +47,8 @@
 
     .mobileSection{
         width: 100%;
-        height: 90vh;
         border: none;
+        box-shadow: none;
     }
 
     aside{

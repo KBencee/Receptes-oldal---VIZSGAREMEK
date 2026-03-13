@@ -16,6 +16,7 @@
     width: 325px;
     height: 425px;
     cursor: pointer;
+    box-shadow: 0 0.5rem 1rem 0 var(--font);
     .myImg{
         aspect-ratio: 16 / 9;
         object-fit: cover;

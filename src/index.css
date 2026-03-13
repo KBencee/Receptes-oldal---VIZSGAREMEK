@@ -24,11 +24,15 @@ body{
     color: var(--font);
 }
 
+i{
+    cursor: pointer;
+}
+
 .headBar{
     padding: 1rem;
     text-align: center;
     background-color: var(--secondary);
-    height: 30vh;
+    height: 20vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
