@@ -10,9 +10,13 @@ const ImageUpload = ({
  }) => {
   const [imagePath, setImagePath] = useState<string>(props.imagePath_ || (typeof props.image === "string" ? props.image : ""));
 
-  useEffect(() => {
-    setImagePath(props.imagePath_ || (typeof props.image === "string" ? props.image : ""));
-  }, [props.image, props.imagePath_]);
+ useEffect(() => {
+  if (props.imagePath_) {
+    setImagePath(props.imagePath_);
+  } else if (typeof props.image === "string" && props.image) {
+    setImagePath(props.image);
+  }
+}, [props.image, props.imagePath_]);
   return (
     <div
       className={`imageUploadDiv ${props.image ? "has-file" : ""}`}

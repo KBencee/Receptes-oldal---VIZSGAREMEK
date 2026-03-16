@@ -20,6 +20,7 @@ function ContentUpload_() {
   const [ingredients, setIngredients] = useState<string>("");
   const { isMobile } = useMobileContext();
   const [buttonClicked, setButtonClicked] = useState<boolean>(false);
+  const [isUploadDone, setIsUploadDone] = useState<boolean>(false);
 
   const isPostReady = () => {
     return (
@@ -43,7 +44,7 @@ function ContentUpload_() {
     }
     let trueTagList : string[] = [];
     tags.forEach((tag) => {
-      if(tag.trim() !== "" || tag.trim().toLowerCase() !== "cimke"){
+      if(tag.trim() !== "" && tag.trim().toLowerCase() !== "cimke"){
         trueTagList.push(tag.trim());
       }
     });
@@ -56,7 +57,8 @@ function ContentUpload_() {
       tags: trueTagList,
       ingredients: ingredients,
     };
-    postUpload(temp);
+    await postUpload(temp);
+    setIsUploadDone(true);
   };
 
   const notReadyClick = () => {
@@ -68,7 +70,7 @@ function ContentUpload_() {
       <Navbar />
       <div id={isMobile ? "contentUploadMobile" : "contentUpload"}>
         { (
-          <ImageUpload image={image} setImage={setImage} imagePath_={""} />
+          <ImageUpload image={image} setImage={setImage}/>
         )}
         { (
           <TextUpload
@@ -90,7 +92,7 @@ function ContentUpload_() {
             setIngredients={setIngredients}
           />
         )}
-        {buttonClicked && isPostReady() && (
+        {isUploadDone && (
           <>
             <div id="alertOverlay" />
             <UploadAlert
