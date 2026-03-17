@@ -4,6 +4,8 @@ import { useQuery } from "@tanstack/react-query";
 import SettingsTab from "./SettingsTab";
 import { useContext } from "react";
 import { AuthUserContext } from "../context/AuthenticatedUserContextProvider";
+import styles from '../css/Headbar.module.css'
+
 
 const API_BASE_URL = "https://cbnncff2-7114.euw.devtunnels.ms";
 
@@ -30,7 +32,7 @@ const ProfileHeadBar = () => {
     }
   };
   return (
-    <div className="headBar profileHeadBar">
+    <div className={styles.headBar}>
       <h1 className="profileName">
         {user?.username || localStorage.getItem("username")} receptjei
       </h1>

@@ -1,14 +1,14 @@
 import styles from '../css/Headbar.module.css'
 
 
-const SavedHeadBar = () => {
+const UploadHeadBar = () => {
   return (
     <div className={styles.headBar}>
       <h1 className="profileName">
-        Mentett receptjeid
+        Új recept feltöltése
       </h1>
     </div>
   );
 };
 
-export default SavedHeadBar;
+export default UploadHeadBar;

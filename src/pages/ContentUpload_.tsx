@@ -8,6 +8,7 @@ import { useMobileContext } from "../context/MobileContextProvider";
 import UploadAlert from "../components/UploadAlert";
 import { useNavigate } from "react-router-dom";
 import { menuItems, setActive } from "../components/NavMiddle";
+import UploadHeadBar from "../components/UploadHeadBar";
 
 function ContentUpload_() {
   const [title, setTitle] = useState<string>("");
@@ -68,6 +69,7 @@ function ContentUpload_() {
   return (
     <>
       <Navbar />
+      <UploadHeadBar />
       <div id={isMobile ? "contentUploadMobile" : "contentUpload"}>
         { (
           <ImageUpload image={image} setImage={setImage}/>
