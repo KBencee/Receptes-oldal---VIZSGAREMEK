@@ -500,7 +500,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "ReceptekWebAPI.Models.CimkeDto",
+        "Type": "ReceptekWebAPI.Controllers.CimkekController\u002BCimkeCreateDto",
         "IsRequired": true
       }
     ],
@@ -1218,7 +1218,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[ReceptekWebAPI.Models.MentettReceptResponseDto, ReceptekWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[ReceptekWebAPI.Models.ReceptResponseDto, ReceptekWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

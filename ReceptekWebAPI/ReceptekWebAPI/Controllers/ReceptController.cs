@@ -498,9 +498,9 @@ namespace ReceptekWebAPI.Controllers
             var receptek = await _context.Receptek
                 .Include(r => r.ReceptCimkek).ThenInclude(rc => rc.Cimke)
                 .Include(r => r.User)
-                .Where(r => r.Nev.Contains(query) ||
-                            r.Leiras.Contains(query) ||
-                            r.Hozzavalok.Contains(query))
+                .Where(r => r.Nev.ToLower().Contains(query) ||
+                            r.Leiras.ToLower().Contains(query) ||
+                            r.Hozzavalok.ToLower().Contains(query))
                 .ToListAsync();
 
             List<Guid> mentettReceptIds = new();

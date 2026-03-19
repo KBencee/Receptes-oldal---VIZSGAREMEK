@@ -14,9 +14,15 @@ namespace ReceptekWebAPI.Controllers
         private readonly UserDbContext _context;
         public CimkekController(UserDbContext context) => _context = context;
 
+
+        public class CimkeCreateDto
+        {
+            public string CimkeNev { get; set; } = null!;
+        }
+
         [HttpPost]
         [Authorize]
-        public async Task<ActionResult<CimkeDto>> Create([FromBody] CimkeDto dto)
+        public async Task<ActionResult<CimkeDto>> Create([FromBody] CimkeCreateDto dto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
@@ -24,7 +30,11 @@ namespace ReceptekWebAPI.Controllers
             _context.Cimkek.Add(cimke);
             await _context.SaveChangesAsync();
 
-            var response = new CimkeDto { CimkeNev = cimke.CimkeNev };
+            var response = new CimkeDto
+            {
+                CimkeId = cimke.CimkeId,
+                CimkeNev = cimke.CimkeNev
+            };
             return CreatedAtAction(nameof(GetById), new { id = cimke.CimkeId }, response);
         }
 
@@ -34,7 +44,11 @@ namespace ReceptekWebAPI.Controllers
         {
             var c = await _context.Cimkek.FindAsync(id);
             if (c is null) return NotFound();
-            var dto = new CimkeDto { CimkeNev = c.CimkeNev };
+            var dto = new CimkeDto
+            {
+                CimkeId = c.CimkeId,
+                CimkeNev = c.CimkeNev
+            };
             return Ok(dto);
         }
 
@@ -43,7 +57,11 @@ namespace ReceptekWebAPI.Controllers
         public async Task<ActionResult<List<CimkeDto>>> GetAll()
         {
             var cimkek = await _context.Cimkek.ToListAsync();
-            var dtos = cimkek.Select(c => new CimkeDto { CimkeNev = c.CimkeNev }).ToList();
+            var dtos = cimkek.Select(c => new CimkeDto
+            {
+                CimkeId = c.CimkeId,
+                CimkeNev = c.CimkeNev
+            }).ToList();
             return Ok(dtos);
         }
 

@@ -75,7 +75,7 @@ namespace ReceptekWebAPI.Controllers
 
         [HttpGet("/api/user/me/saved")]
         [Authorize]
-        public async Task<ActionResult<List<MentettReceptResponseDto>>> GetMySaved()
+        public async Task<ActionResult<List<ReceptResponseDto>>> GetMySaved()
         {
             var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (!Guid.TryParse(userIdStr, out var userId))
@@ -84,14 +84,26 @@ namespace ReceptekWebAPI.Controllers
             var mentve = await _context.MentettReceptek
                 .Where(mr => mr.UserId == userId)
                 .Include(mr => mr.Recept)
+                    .ThenInclude(r => r.User)
+                .Include(mr => mr.Recept)
+                    .ThenInclude(r => r.ReceptCimkek)
+                    .ThenInclude(rc => rc.Cimke)
                 .OrderByDescending(mr => mr.MentveEkkor)
-                .Select(mr => new MentettReceptResponseDto
+                .Select(mr => new ReceptResponseDto
                 {
-                    ReceptId = mr.ReceptId,
+                    Id = mr.Recept.Id,
                     Nev = mr.Recept.Nev,
+                    Leiras = mr.Recept.Leiras,
+                    Hozzavalok = mr.Recept.Hozzavalok,
+                    ElkeszitesiIdo = mr.Recept.ElkeszitesiIdo,
+                    NehezsegiSzint = mr.Recept.NehezsegiSzint,
                     Likes = mr.Recept.Likes,
-                    MentveEkkor = mr.MentveEkkor,
-                    KepUrl = mr.Recept.KepUrl
+                    FeltoltoUsername = mr.Recept.User != null ? mr.Recept.User.Username : "Unknown",
+                    FeltoltveEkkor = mr.Recept.FeltoltveEkkor,
+                    KepUrl = mr.Recept.KepUrl,
+                    Cimkek = mr.Recept.ReceptCimkek.Select(rc => rc.Cimke.CimkeNev).ToList(),
+                    MentveVan = true,
+                    LikeolvaVan = _context.Likes.Any(l => l.UserId == userId && l.ReceptId == mr.Recept.Id)
                 })
                 .ToListAsync();
 
