@@ -31,6 +31,19 @@ export function createUnlikeMutationOption(id: string) {
         mutationFn: () => delLike(id)
     })
 }
+export function createSaveMutationOption(id: string) {
+    return mutationOptions({
+        mutationKey: ['save', id],
+        mutationFn: () => postSave(id)
+    })
+}
+
+export function createUnsaveMutationOption(id: string) {
+    return mutationOptions({
+        mutationKey: ['unSave', id],
+        mutationFn: () => delSave(id)
+    })
+}
 
 const postRegister = async (username: string, password: string) => {
     console.log("Try register...")
@@ -58,5 +71,15 @@ const postLike = async (id: string) => {
 
 const delLike = async (id: string) => {
     const response = await axios.delete(BASE_URL + `/api/Recept/${id}/like`)
+    return await response.data
+}
+
+const postSave = async (id: string) => {
+    const response = await axios.post(BASE_URL + `/saved/${id}`)
+    return await response.data
+}
+
+const delSave = async (id: string) => {
+    const response = await axios.delete(BASE_URL + `/saved/${id}`)
     return await response.data
 }

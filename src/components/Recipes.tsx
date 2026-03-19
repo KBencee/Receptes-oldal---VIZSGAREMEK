@@ -5,7 +5,7 @@ import RecipeCard from './RecipeCard'
 
 
 const Recipes = () => {
-    const {data, isPending, isFetched, isError} = useQuery(createRecipeQueryOption())
+  const {data, isPending, isFetched, isError} = useQuery(createRecipeQueryOption())
   return (
     <div className={styles.recipes}>
         <h1>Legújabb receptek</h1>

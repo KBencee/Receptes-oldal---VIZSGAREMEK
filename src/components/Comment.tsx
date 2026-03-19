@@ -1,5 +1,5 @@
-import type { CommentType } from "../queryOptions/createRecipeQueryOption"
 import styles from '../css/Comments.module.css'
+import type { CommentType } from '../types/RecipeTypes'
 
 const Comment = (comment: CommentType) => {
   return (

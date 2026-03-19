@@ -7,8 +7,6 @@ import styles from '../css/HomeBtn.module.css'
 
 const HomeBtn = () => {
     const navigate = useNavigate()
-    
-
     const goToHome = () => {
         navigate("/")
         setActive(menuItems[0].name)
