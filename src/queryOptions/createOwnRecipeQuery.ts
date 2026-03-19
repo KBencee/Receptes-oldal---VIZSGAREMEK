@@ -23,6 +23,13 @@ export default function createRecipeQueryOption() {
     })
 }
 
+export const searchRecipes = async (term: string): Promise<RecipeType[]> => {
+  const response = await api.get("/api/Recept/search", {
+    params: { query : term }
+  })
+  return response.data
+}
+
 export function createNextRecipeQueryOption(id: string) {
     return queryOptions({
         queryKey: ['next', id],
