@@ -13,8 +13,8 @@ export const getTags = async () => {
       throw new Error("Failed to fetch tags");
     }
 
-    allTags = await response.json();
-    console.log("Fetched tags:", allTags);
+    return await response.json();
+    // console.log("Fetched tags:", allTags);
   } catch (error) {
     console.error("Error:", error);
   }
@@ -63,7 +63,7 @@ const postUpload = async (rawPost: ContentType) => {
   };
 
   // console.log(accessToken);
-  await getTags();
+  allTags = await getTags();
   if (rawPost.tags && rawPost.tags.length > 0) {
     for (let index = 0; index < rawPost.tags.length; index++) {
       for (let i = 0; i < allTags.length; i++) {

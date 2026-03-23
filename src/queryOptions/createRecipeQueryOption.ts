@@ -1,6 +1,7 @@
 import { queryOptions } from "@tanstack/react-query";
 import axios from "axios";
 import type { CommentType, RecipeType } from "../types/RecipeTypes";
+import { useState } from "react";
 
 const BASE_URL = "https://cbnncff2-7114.euw.devtunnels.ms"
 
@@ -45,12 +46,10 @@ export const searchRecipesByTitle = async (term: string): Promise<RecipeType[]> 
   return response.data
 }
 
-// export const searchRecipesByTags = async (targetTags: number[]): Promise<RecipeType[]> => {
-//   const response = await api.get("/api/Recept/search", {
-//     params: { query : term }
-//   })
-//   return response.data
-// }
+export const searchRecipesByTags = async (targetId: number): Promise<RecipeType[]> => {
+    const response = await api.get(`/api/Recept/by-tag/${targetId}`)
+    return response.data
+}
 
 export function createRecipeByIdQueryOption(id: string) {
     return queryOptions({
