@@ -9,6 +9,11 @@ import Save from './Save'
 const ForYouReel = (recipe:RecipeType) => {
     const {isMobile} = useMobileContext()
 
+    const share = () => {
+        navigator.clipboard.writeText("https://ltcfml1t-5173.euw.devtunnels.ms/foryou/" + recipe.id)
+        alert("A link másolva lett a vágólapra")
+    }
+
     return (
     <section className={isMobile ? styles.mobileSection : ""}>
         <div className={styles.forYouHead}><HomeBtn/><span>{recipe.nev}</span></div>
@@ -16,7 +21,7 @@ const ForYouReel = (recipe:RecipeType) => {
         <aside>
             <Like {...recipe}/>
             <Save {...recipe}/>
-            <i className="fa-solid fa-share"></i>
+            <i className="fa-solid fa-share" onClick={share}></i>
             {isMobile ? <Link to={"/description/" + recipe.id}><i className="fa-solid fa-ellipsis"></i></Link> : ""}
         </aside>
         <div className={styles.tags}>
