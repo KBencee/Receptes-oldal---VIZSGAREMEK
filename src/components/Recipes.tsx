@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query'
-import createRecipeQueryOption from '../queryOptions/createRecipeQueryOption'
 import styles from '../css/Recipes.module.css'
 import RecipeCard from './RecipeCard'
 import type { RecipeType } from '../types/RecipeTypes'
+import { createRecipeQueryOption } from '../queryOptions/createRecipeQueryOption'
 
 
 const Recipes = ({ searchResults }: { searchResults: RecipeType[]}) => {

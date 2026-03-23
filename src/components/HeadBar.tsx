@@ -2,7 +2,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from '../css/Headbar.module.css'
 import type { RecipeType } from '../types/RecipeTypes';
-import { searchRecipes } from '../queryOptions/createOwnRecipeQuery';
+import { searchRecipes } from '../queryOptions/createRecipeQueryOption';
 
 
 const HeadBar = ({ onSearch }: { onSearch: (results: RecipeType[]) => void }) => {

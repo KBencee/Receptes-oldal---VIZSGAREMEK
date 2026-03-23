@@ -4,11 +4,45 @@ import type { CommentType, RecipeType } from "../types/RecipeTypes";
 
 const BASE_URL = "https://cbnncff2-7114.euw.devtunnels.ms"
 
-export default function createRecipeQueryOption() {
+const api = axios.create({
+  baseURL: "https://cbnncff2-7114.euw.devtunnels.ms",
+});
+
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem("access");
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  config.headers["X-Tunnel-Skip-Anti-Phishing-Scan"] = "true"; 
+  return config;
+});
+
+export function createRecipeQueryOption() {
     return queryOptions({
         queryKey: ['recipes'],
         queryFn: getRecipes
     })
+}
+
+export function createOwnRecipeQueryOption() {
+    return queryOptions({
+        queryKey: ['recipes', 'me'],
+        queryFn: getRecipes
+    })
+}
+
+export function createSavedRecipeQueryOption() {
+    return queryOptions({
+        queryKey: ['recipes', 'me', 'saved'],
+        queryFn: getRecipes
+    })
+}
+
+export const searchRecipes = async (term: string): Promise<RecipeType[]> => {
+  const response = await api.get("/api/Recept/search", {
+    params: { query : term }
+  })
+  return response.data
 }
 
 export function createRecipeByIdQueryOption(id: string) {

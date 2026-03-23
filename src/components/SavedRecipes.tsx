@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import createSavedRecipeQuery from "../queryOptions/createSavedRecipeQuery";
 import styles from "../css/Recipes.module.css";
 import RecipeCard from "./RecipeCard";
+import { createSavedRecipeQueryOption } from "../queryOptions/createRecipeQueryOption";
 
 const SavedRecipes = () => {
-  const { data, isPending, isError } = useQuery(createSavedRecipeQuery());
+  const { data, isPending, isError } = useQuery(createSavedRecipeQueryOption());
 
   return (
     <div className={styles.recipes}>
