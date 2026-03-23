@@ -41,10 +41,13 @@ const Like = (recipe:RecipeType) => {
   return (
     <div className={styles.likes}>
         {likes}
-        {isLiked ? 
-            <i className="fa-solid fa-heart" onClick={() => {unlikeFunction()}}></i> 
-        : 
-            <i className="fa-regular fa-heart" onClick={() => {likeFunction()}}></i> 
+        {like.status == "pending" || unlike.status == "pending" ?
+            <i className="fa-solid fa-spinner fa-spin"></i>
+        :
+            isLiked ? 
+                <i className="fa-solid fa-heart" onClick={() => {unlikeFunction()}}></i> 
+            : 
+                <i className="fa-regular fa-heart" onClick={() => {likeFunction()}}></i> 
         }
     </div>
   )
