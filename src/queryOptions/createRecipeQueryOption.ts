@@ -27,23 +27,30 @@ export function createRecipeQueryOption() {
 export function createOwnRecipeQueryOption() {
     return queryOptions({
         queryKey: ['recipes', 'me'],
-        queryFn: getRecipes
+        queryFn: getOwnRecipes
     })
 }
 
 export function createSavedRecipeQueryOption() {
     return queryOptions({
         queryKey: ['recipes', 'me', 'saved'],
-        queryFn: getRecipes
+        queryFn: getSavedRecipes
     })
 }
 
-export const searchRecipes = async (term: string): Promise<RecipeType[]> => {
+export const searchRecipesByTitle = async (term: string): Promise<RecipeType[]> => {
   const response = await api.get("/api/Recept/search", {
     params: { query : term }
   })
   return response.data
 }
+
+// export const searchRecipesByTags = async (targetTags: number[]): Promise<RecipeType[]> => {
+//   const response = await api.get("/api/Recept/search", {
+//     params: { query : term }
+//   })
+//   return response.data
+// }
 
 export function createRecipeByIdQueryOption(id: string) {
     return queryOptions({
@@ -74,6 +81,16 @@ export function createRecipeCommentsQueryOption(id: string) {
 
 const getRecipes = async () : Promise<RecipeType[]> => {
   const response = await axios.get(BASE_URL + "/api/Recept")
+  return await response.data
+}
+
+const getOwnRecipes = async () : Promise<RecipeType[]> => {
+  const response = await api.get("/api/Recept/my-recipes")
+  return await response.data
+}
+
+const getSavedRecipes = async () : Promise<RecipeType[]> => {
+  const response = await api.get("/api/user/me/saved")
   return await response.data
 }
 

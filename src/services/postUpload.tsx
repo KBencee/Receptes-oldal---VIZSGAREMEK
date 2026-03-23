@@ -5,23 +5,23 @@ const API_BASE_URL = "https://cbnncff2-7114.euw.devtunnels.ms/api";
 let allTags: { cimkeNev: string; cimkeId: number }[] = [];
 const accessToken = localStorage.getItem("access") || "";
 
+export const getTags = async () => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/Cimkek`);
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch tags");
+    }
+
+    allTags = await response.json();
+    console.log("Fetched tags:", allTags);
+  } catch (error) {
+    console.error("Error:", error);
+  }
+};
 const postUpload = async (rawPost: ContentType) => {
   let TagIdList: { id: number }[] = [];
 
-  const getTags = async () => {
-    try {
-      const response = await fetch(`${API_BASE_URL}/Cimkek`);
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch tags");
-      }
-
-      allTags = await response.json();
-      console.log("Fetched tags:", allTags);
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
 
   const checkIfTagExists = async (tagToCheck: string) => {
     try {

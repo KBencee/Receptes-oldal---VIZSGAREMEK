@@ -2,13 +2,19 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from '../css/Headbar.module.css'
 import type { RecipeType } from '../types/RecipeTypes';
-import { searchRecipes } from '../queryOptions/createRecipeQueryOption';
+import { searchRecipesByTitle } from '../queryOptions/createRecipeQueryOption';
+import { getTags } from '../services/postUpload';
+import { useState } from 'react';
 
 
 const HeadBar = ({ onSearch }: { onSearch: (results: RecipeType[]) => void }) => {
-
-    const handleSearch = async (term: string) => {
-    const results = await searchRecipes(term)
+  let allTags: { cimkeNev: string; cimkeId: number }[] = [];
+  getTags()
+  
+  const handleSearch = async (term: string) => {
+    const [localSearchResults, setLocalSearchResults] = useState<RecipeType[]>([])
+    const results = await searchRecipesByTitle(term)
+    setLocalSearchResults(prev => [...prev, ...results])
     onSearch(results)
   }
 
