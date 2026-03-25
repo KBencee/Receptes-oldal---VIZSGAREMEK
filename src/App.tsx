@@ -9,6 +9,7 @@ import ForYou from './pages/ForYou'
 import ContentUpload_ from './pages/ContentUpload_'
 import AuthenticatedUserContextProvider from './context/AuthenticatedUserContextProvider'
 import MobileDescription from './components/MobileDescription'
+import ErrorPage from './pages/ErrorPage'
 
 const App = () => {
 	return (
@@ -24,6 +25,7 @@ const App = () => {
 					<Route path='/signup' element={<Signup/>}/>
 					<Route path='/foryou/:id' element={<ForYou/>}/>
 					<Route path='/description/:id' element={<MobileDescription/>}/>
+					<Route path='*' element={<ErrorPage/>}/>
 				</Routes>
 			</BrowserRouter>
 		</AuthenticatedUserContextProvider>
