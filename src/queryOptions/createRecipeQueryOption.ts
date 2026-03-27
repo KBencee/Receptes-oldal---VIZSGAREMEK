@@ -1,7 +1,6 @@
 import { queryOptions } from "@tanstack/react-query";
 import axios from "axios";
 import type { CommentType, RecipeType } from "../types/RecipeTypes";
-import { useState } from "react";
 
 const BASE_URL = "https://cbnncff2-7114.euw.devtunnels.ms"
 

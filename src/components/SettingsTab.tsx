@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import ImageUpload from "./ImageUpload";
 import { toast } from "sonner";
 import { useQueryClient, type QueryClient } from "@tanstack/react-query";
-import styles from "../css/Login.module.css";
 
 const API_BASE_URL = "https://cbnncff2-7114.euw.devtunnels.ms/api";
 const token = localStorage.getItem("access");

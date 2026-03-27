@@ -8,7 +8,6 @@ const OwnRecipes = () => {
 
     return (
         <div className={styles.recipes}>
-            {/* <h1>A saját recepteid</h1> */}
             <div className={styles.recipeCardContainer}>
                 
                 {isPending && (
