@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import ImageUpload from "./ImageUpload";
 import { toast } from "sonner";
 import { useQueryClient, type QueryClient } from "@tanstack/react-query";
+import styles from "../css/Login.module.css";
 
 const API_BASE_URL = "https://cbnncff2-7114.euw.devtunnels.ms/api";
 const token = localStorage.getItem("access");
@@ -101,7 +102,7 @@ const saveButtonHandler = (props: {
     reloadFunc: props.reloadFunc,
     queryClient: props.queryClient,
   });
-  toast.success("Profil sikeresen módosítva!");
+  toast.success("Profil sikeresen frissítve!");
   document.getElementById("alertOverlay")!.style.display = "none";
 };
 
@@ -133,10 +134,13 @@ const SettingsTab = (props: {
             queryClient: queryClient,
           })
         }
+        className="uploadButton"
       >
         Mentés
       </button>
-      <button onClick={props.onClick}>Mégse</button>
+      <button onClick={props.onClick} className="uploadButton">
+        Mégse
+      </button>
     </div>
   );
 };

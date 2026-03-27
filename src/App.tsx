@@ -10,9 +10,12 @@ import ContentUpload_ from './pages/ContentUpload_'
 import AuthenticatedUserContextProvider from './context/AuthenticatedUserContextProvider'
 import MobileDescription from './components/MobileDescription'
 import ErrorPage from './pages/ErrorPage'
+import { Toaster } from 'sonner'
 
 const App = () => {
 	return (
+		<>
+		<Toaster/>
 		<MobileContextProvider>
 		<AuthenticatedUserContextProvider>
 			<BrowserRouter>
@@ -30,6 +33,7 @@ const App = () => {
 			</BrowserRouter>
 		</AuthenticatedUserContextProvider>
 		</MobileContextProvider>
+		</>
 	)
 }
 
