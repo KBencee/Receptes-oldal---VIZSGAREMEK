@@ -19,8 +19,9 @@
         width: 40vw;
         height: 5vh;
         padding: 1rem;
-        border: var(--primary) solid 3px;
+        font-size: large;
+        border: var(--font) solid 3px;
         border-radius: var(--border-radius);
-        background-color: var(--back-ground);       
+        background-color: #fff0d3;
     }
 } 
