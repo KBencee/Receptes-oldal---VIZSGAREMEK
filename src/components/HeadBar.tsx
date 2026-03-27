@@ -43,7 +43,7 @@ const HeadBar = ({
   return (
     <div className={styles.headBar}>
       <h1>Receptek</h1>
-      <input onChange={(e) => setTerm(e.target.value)} />
+      <input onChange={(e) => setTerm(e.target.value)} placeholder="Keresés...🔎"/>
     </div>
   );
 };

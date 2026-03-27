@@ -2,8 +2,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    height: 100svh;
+    height: 99svh;
     scrollbar-width: none;
+    overflow: hidden;
 
     .forYouHead{
         margin-left: 1rem;

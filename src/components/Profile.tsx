@@ -31,9 +31,9 @@ const Profile = () => {
 
   return (
     <div className={styles.profile}>
-		{authUser && <button className={styles.btn} onClick={logout}><i className="fa-solid fa-arrow-right-from-bracket"></i></button>}
+		{authUser && <button className={styles.logoutBtn} onClick={logout}><i className="fa-solid fa-arrow-right-from-bracket"></i></button>}
         {!authUser ? 
-        	<Link to="/login" style={{textAlign:"right"}}>Bejelentkezés</Link> 
+        	<Link to="/login" className={styles.loginBtn}>Bejelentkezés</Link> 
 			: 
 			<img src={user?.profileImageUrl ? 
 				user.profileImageUrl 
