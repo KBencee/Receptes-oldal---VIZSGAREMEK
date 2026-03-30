@@ -499,7 +499,6 @@ namespace ReceptekWebAPI.Controllers
                 .Include(r => r.ReceptCimkek).ThenInclude(rc => rc.Cimke)
                 .Include(r => r.User)
                 .Where(r => r.Nev.ToLower().Contains(query) ||
-                            r.Leiras.ToLower().Contains(query) ||
                             r.Hozzavalok.ToLower().Contains(query))
                 .ToListAsync();
 
