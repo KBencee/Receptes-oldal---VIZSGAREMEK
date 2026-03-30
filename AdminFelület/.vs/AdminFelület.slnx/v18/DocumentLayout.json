@@ -1,37 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\User\\Documents\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\",
+  "WorkspaceRootPath": "C:\\Users\\User\\Documents\\Receptes-oldal---VIZSGAREMEK\\AdminFel\u00FClet\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\user\\documents\\receptes-oldal-backend---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\user\\documents\\receptes-oldal---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|solutionrelative:adminfel\u00FClet\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\user\\documents\\receptes-oldal-backend---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\user\\documents\\receptes-oldal---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|solutionrelative:adminfel\u00FClet\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\user\\documents\\receptes-oldal-backend---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\user\\documents\\receptes-oldal---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|solutionrelative:adminfel\u00FClet\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\user\\documents\\receptes-oldal-backend---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\user\\documents\\receptes-oldal---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|solutionrelative:adminfel\u00FClet\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\user\\documents\\receptes-oldal-backend---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\models\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\user\\documents\\receptes-oldal---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\models\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|solutionrelative:adminfel\u00FClet\\models\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\user\\documents\\receptes-oldal-backend---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\user\\documents\\receptes-oldal---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|solutionrelative:adminfel\u00FClet\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\user\\documents\\receptes-oldal-backend---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\user\\documents\\receptes-oldal---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|solutionrelative:adminfel\u00FClet\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\user\\documents\\receptes-oldal-backend---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|c:\\users\\user\\documents\\receptes-oldal---vizsgaremek\\adminfel\u00FClet\\adminfel\u00FClet\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{C79EE164-735B-2801-7BD5-CC86CEE2DC3D}|AdminFel\u00FClet\\AdminFel\u00FClet.csproj|solutionrelative:adminfel\u00FClet\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -48,9 +48,9 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "LoginWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\LoginWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\Receptes-oldal---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\LoginWindow.xaml",
               "RelativeDocumentMoniker": "AdminFel\u00FClet\\LoginWindow.xaml",
-              "ToolTip": "C:\\Users\\User\\Documents\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\LoginWindow.xaml",
+              "ToolTip": "C:\\Users\\User\\Documents\\Receptes-oldal---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\LoginWindow.xaml",
               "RelativeToolTip": "AdminFel\u00FClet\\LoginWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-02-25T06:56:36.566Z"
@@ -59,9 +59,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\Receptes-oldal---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "AdminFel\u00FClet\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\Receptes-oldal---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\MainWindow.xaml.cs",
               "RelativeToolTip": "AdminFel\u00FClet\\MainWindow.xaml.cs",
               "ViewState": "AgIAAGIBAAAAAAAAAAAuwHQBAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -71,9 +71,9 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Models.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\Models\\Models.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\Receptes-oldal---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\Models\\Models.cs",
               "RelativeDocumentMoniker": "AdminFel\u00FClet\\Models\\Models.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\Models\\Models.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\Receptes-oldal---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\Models\\Models.cs",
               "RelativeToolTip": "AdminFel\u00FClet\\Models\\Models.cs",
               "ViewState": "AgIAAE4AAAAAAAAAAAAqwF8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -83,9 +83,9 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "LoginWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\LoginWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\Receptes-oldal---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\LoginWindow.xaml.cs",
               "RelativeDocumentMoniker": "AdminFel\u00FClet\\LoginWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\LoginWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\Receptes-oldal---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\LoginWindow.xaml.cs",
               "RelativeToolTip": "AdminFel\u00FClet\\LoginWindow.xaml.cs",
               "ViewState": "AgIAABsAAAAAAAAAAAA9wDEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -95,11 +95,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ApiService.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\Services\\ApiService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\Receptes-oldal---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\Services\\ApiService.cs",
               "RelativeDocumentMoniker": "AdminFel\u00FClet\\Services\\ApiService.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\Services\\ApiService.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\Receptes-oldal---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\Services\\ApiService.cs",
               "RelativeToolTip": "AdminFel\u00FClet\\Services\\ApiService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-25T07:06:06.248Z",
               "EditorCaption": ""
@@ -108,9 +108,9 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\App.xaml",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\Receptes-oldal---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\App.xaml",
               "RelativeDocumentMoniker": "AdminFel\u00FClet\\App.xaml",
-              "ToolTip": "C:\\Users\\User\\Documents\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\App.xaml",
+              "ToolTip": "C:\\Users\\User\\Documents\\Receptes-oldal---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\App.xaml",
               "RelativeToolTip": "AdminFel\u00FClet\\App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-03-03T07:35:55.85Z"
@@ -119,9 +119,9 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\Receptes-oldal---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\MainWindow.xaml",
               "RelativeDocumentMoniker": "AdminFel\u00FClet\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\User\\Documents\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\User\\Documents\\Receptes-oldal---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\MainWindow.xaml",
               "RelativeToolTip": "AdminFel\u00FClet\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-02-18T07:34:35.979Z"
@@ -130,9 +130,9 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\Receptes-oldal---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\App.xaml.cs",
               "RelativeDocumentMoniker": "AdminFel\u00FClet\\App.xaml.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\Receptes-oldal-BACKEND---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\Receptes-oldal---VIZSGAREMEK\\AdminFel\u00FClet\\AdminFel\u00FClet\\App.xaml.cs",
               "RelativeToolTip": "AdminFel\u00FClet\\App.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
