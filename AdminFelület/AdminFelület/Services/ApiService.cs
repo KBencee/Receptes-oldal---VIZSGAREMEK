@@ -18,7 +18,7 @@ namespace AdminFelület.Services
         {
             _httpClient = new HttpClient
             {
-                BaseAddress = new Uri("https://cbnncff2-7114.euw.devtunnels.ms/api/")
+                BaseAddress = new Uri("https://localhost:7114/api/")
             };
         }
 
