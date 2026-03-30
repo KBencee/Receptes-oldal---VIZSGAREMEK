@@ -1,0 +1,64 @@
+.myForm{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background-image: url("backgroud.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.login{
+    width: 90vw;
+    max-width: 400px;
+    height: 90vh;
+    max-height: 550px;
+    padding: 2rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: var(--font) solid 3px;
+    border-radius: var(--border-radius);
+    color: var(--font);
+    font-size: 1.1rem;
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(7px);
+
+    label{
+        width: 70%;
+        border-bottom: 2px solid var(--primary);
+        color: var(--font);
+        input{
+            width: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+        }
+    }
+    
+    input{
+        padding: 0.3rem;
+    }
+    
+    a{
+        color: var(--font);
+        font-weight: bold;
+        text-decoration: none;
+    }
+    
+    a:hover{
+        text-decoration: underline;
+    }
+    
+    .btn{
+        background-color: var(--primary);
+        color: var(--secondary);
+        font-size: 1.1rem;
+        padding: 1rem;
+        border: none;
+        border-radius: var(--border-radius);
+        width: 70%;
+    }
+}

@@ -1,0 +1,28 @@
+.profile{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.loginBtn{
+    text-decoration: none;
+    color: var(--secondary);
+    background-color: var(--primary);
+    margin: 0.5rem;
+    padding: 0.75rem;
+    border-radius: var(--border-radius);
+}
+
+.logoutBtn{
+    background-color: transparent;
+    color: var(--font);
+    padding: 0.25rem;
+    border: 2px solid var(--primary);
+    border-radius: var(--border-radius);
+    transition: 0.3s;
+}
+
+.logoutBtn:hover{
+    background-color: var(--primary);
+    color: var(--secondary);
+}

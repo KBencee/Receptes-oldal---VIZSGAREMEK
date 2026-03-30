@@ -1,0 +1,11 @@
+.homeBtn{
+    background: none;
+    border: none;
+    scale: 2;
+    color: var(--font);
+    transition: 1s;
+}
+
+.homeBtn:hover{
+    scale: 3;
+}

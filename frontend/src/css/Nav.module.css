@@ -1,0 +1,97 @@
+.navbar{
+    height: 5vh;
+    width: 100%;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div{
+        min-width: 88.85px;
+        .logo{
+            scale: 200%;
+            margin: 1rem;
+        }
+    }
+
+    .middle{
+        width: 60vw;
+        text-align: center;
+
+        button{
+            background-color: var(--back-ground);
+            border: none;
+            font-size: 2rem;
+        }
+    }
+
+    img{
+        height: 7vh;
+        width: 7vh;
+        border-radius: 50%;
+    }
+}
+
+.desktopNav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    a{
+        text-decoration: none;
+        color: var(--font);
+        padding: 0.75rem;
+        border-radius: var(--border-radius);
+        background: rgba(255, 255, 255, 0);
+        outline: 2px solid var(--primary);
+    }
+    .active{
+        background: var(--primary);
+        color: var(--secondary);
+        outline: none;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+}
+
+.mobileNav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1rem;
+    background-color: var(--back-ground);
+    transition: 1s;
+
+    a{
+        text-decoration: none;
+        color: var(--font);
+        font-size: larger;
+    }
+
+}
+
+.toggled{
+    height: 0;
+    overflow: hidden;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+}
+
+.open{
+    height: 93svh;
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    background-color: var(--back-ground);
+}
+
+
+@media only screen and (max-width: 768px){
+    .navbar{ 
+        padding: 0px 10px;
+        .middle{
+        width: auto;
+    }}
+}

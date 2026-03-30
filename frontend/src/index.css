@@ -1,0 +1,29 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: none;
+}
+
+:root{
+    --primary: #8B5E3C;
+    --secondary: #f1b67b;
+    --back-ground: #FFF6E5;
+    --font: #3A2F2A;
+    --border-radius: 2rem;
+}
+
+#root{
+    width: 100%;
+    overflow-x: hidden;
+    max-height: 100svh;
+}
+
+body{
+    background-color: var(--back-ground);
+    color: var(--font);
+}
+
+i{
+    cursor: pointer;
+}

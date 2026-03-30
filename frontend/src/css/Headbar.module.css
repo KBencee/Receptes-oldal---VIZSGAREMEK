@@ -1,0 +1,27 @@
+.headBar{
+    padding: 0.5rem;
+    text-align: center;
+    background-color: var(--secondary);
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 0.5rem;
+
+    h1{
+        font-size: 300%;
+        font-weight: bold;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    input{
+        width: 40vw;
+        height: 5vh;
+        padding: 1rem;
+        font-size: large;
+        border: var(--font) solid 3px;
+        border-radius: var(--border-radius);
+        background-color: #fff0d3;
+    }
+} 

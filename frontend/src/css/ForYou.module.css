@@ -1,0 +1,88 @@
+.forYou{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 99svh;
+    scrollbar-width: none;
+    overflow: hidden;
+
+    .forYouHead{
+        margin-left: 1rem;
+
+        span{
+            margin-left: 2rem;
+            font-size: xx-large;
+            position: relative;
+            top: 0.25rem;
+        }
+    }
+
+    .arrows{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    section{
+        background-attachment: fixed;
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 1rem;
+        margin: 5vh 0;
+        width: 47vw;
+        height: 90vh;
+        border: 0.5rem solid var(--secondary);
+        border-radius: var(--border-radius);
+        box-shadow: 0 0.5rem 1rem 0 var(--font);
+        img{
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            object-position: top;
+            width: 100%;
+            max-height: 425px;
+        }
+    }
+
+    .mobileSection{
+        width: 100%;
+        border: none;
+        box-shadow: none;
+    }
+
+    aside{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        .likes{
+            display: flex;
+            gap: 1rem;
+        }
+
+        i{
+            scale: 2;
+        }
+
+        a{
+            color: var(--font);
+        }
+    }
+
+    .tags{
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .tag{
+        background-color: var(--secondary);
+        border-radius: var(--border-radius);
+        padding: 0.5rem;
+    }
+}

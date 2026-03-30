@@ -1,0 +1,250 @@
+#contentUpload {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  padding: 50px;
+  background: white;
+  max-width: 1000px;
+  margin: 40px auto;
+  border-radius: 10px;
+}
+
+#contentUploadMobile {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 50px;
+  background: white;
+  max-width: 1000px;
+  margin: 40px auto;
+  border-radius: 10px;
+}
+
+html {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#diffLenDiv {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+
+#textCont {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-grow: 1;
+}
+
+#lenSelect {
+  width: 2.8em;
+  text-align: center;
+}
+
+#textContDiv {
+  gap: 10em;
+}
+
+#setName {
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  outline: none;
+}
+
+#tagList {
+  
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 18em;
+}
+
+#innerTagList {
+  display: flex;
+  gap: 10px;
+  white-space: nowrap;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+#tagList::-webkit-scrollbar {
+  height: 6px;
+}
+
+#tagList::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+#tagList::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.tag {
+  background: #8B5E3C;
+  color: #f1b67b;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 15px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  cursor: pointer;
+  min-width: 60px;
+}
+
+#plusButton{
+  min-width: 0;
+}
+
+textarea {
+  resize: none;
+  height: 7em;
+  padding: 5px;
+}
+
+#diffDiv,
+#lenDiv {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+label {
+  font-size: 15px;
+  color: rgb(169, 169, 169);
+}
+
+select,
+input[type="text"] {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+#lenUnitSel {
+  width: 80px;
+}
+
+.uploadButton {
+  margin-top: 25px;
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  background: #8B5E3C;
+  color: #f1b67b;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.uploadButton:hover {
+  background: black;
+  color: white;
+  transition: 200ms;
+}
+
+.uploadButton:disabled {
+  background: lightgray;
+  color: white;
+  cursor: default;
+}
+
+#lenInline {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+}
+
+#imagePreview,
+#imageUpload {
+  height: 20em;
+  max-width: 100%;
+}
+
+
+.fOff {
+  display: none;
+  width: 0;
+}
+
+.noBorderForImageUploadDiv {
+  border: none;
+}
+
+.imageUploadDiv {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.388) !important;
+  border-radius: 10px;
+  min-height: 20em;
+  max-height: 20em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: lightgray;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+  border: 2px dashed black;
+}
+
+.imageUploadDiv:not(.has-file):hover {
+  border: 2px dashed lightgray;
+}
+
+.imageUploadDiv.has-file {
+  border: none;
+}
+
+.submitButton {
+  margin-top: 25px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #8B5E3C;
+  color: #f1b67b;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+#UploadAlertBox {
+  text-align: center; 
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  background: white; 
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+  z-index: 1000; } 
+
+  #UploadAlertBox p {
+     margin: 0; } 
+    
+  #UploadAlertBox input[type="button"] {
+     margin-top: 15px; 
+     padding: 5px; 
+     border: none; 
+     border-radius: 10px; 
+     background: #8B5E3C; 
+     color: #f1b67b; 
+     font-size: 15px; 
+     cursor: pointer; }
+
+#alertOverlay {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 999;
+      display: flex;
+    align-items: center;
+    justify-content: center;
+}
