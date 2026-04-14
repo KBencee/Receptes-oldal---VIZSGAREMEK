@@ -1,6 +1,4 @@
-
-
-const BASE_URL = "https://cbnncff2-7114.euw.devtunnels.ms"
+export const BASE_URL = "https://localhost:7114"
 
 type TokenResponse = {
     accessToken: string,

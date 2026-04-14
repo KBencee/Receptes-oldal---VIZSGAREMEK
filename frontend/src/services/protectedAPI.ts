@@ -1,6 +1,6 @@
 import axios from "axios"
+import { BASE_URL } from "./publicAPI"
 
-const BASE_URL = "https://cbnncff2-7114.euw.devtunnels.ms"
 
 const protectedAPI = axios.create({baseURL: BASE_URL})
 

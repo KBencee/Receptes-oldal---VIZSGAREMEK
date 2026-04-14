@@ -1,11 +1,10 @@
 import { queryOptions } from "@tanstack/react-query";
 import axios from "axios";
 import type { CommentType, RecipeType } from "../types/RecipeTypes";
-
-const BASE_URL = "https://cbnncff2-7114.euw.devtunnels.ms"
+import { BASE_URL } from "../services/publicAPI";
 
 const api = axios.create({
-  baseURL: "https://cbnncff2-7114.euw.devtunnels.ms",
+  baseURL: BASE_URL,
 });
 
 api.interceptors.request.use((config) => {

@@ -1,7 +1,8 @@
 import type { ContentType } from "../types/ContentType";
 import type { ApiContentType } from "../types/ApiContentType";
+import { BASE_URL } from "./publicAPI";
 
-const API_BASE_URL = "https://cbnncff2-7114.euw.devtunnels.ms/api";
+const API_BASE_URL = BASE_URL + "/api";
 let allTags: { cimkeNev: string; cimkeId: number }[] = [];
 const accessToken = localStorage.getItem("access") || "";
 

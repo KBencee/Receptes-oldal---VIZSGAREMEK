@@ -1,7 +1,7 @@
 import { mutationOptions } from "@tanstack/react-query";
 import axios from "axios";
+import { BASE_URL } from "../services/publicAPI";
 
-const BASE_URL = "https://cbnncff2-7114.euw.devtunnels.ms"
 axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('access')}`;
 
 export function createRegisterMutationOption(username: string, password: string) {
