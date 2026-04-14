@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdminFelület"
         mc:Ignorable="d"
-        Title="Admin bejelentkezés" Height="300" Width="400"
+        Title="Admin bejelentkezés" Height="350" Width="450"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
     <Grid>

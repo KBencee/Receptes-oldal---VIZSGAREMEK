@@ -64,12 +64,14 @@ namespace ReceptekWebAPI.Data
             modelBuilder.Entity<ReceptCimke>()
                 .HasOne(rc => rc.Recept)
                 .WithMany(r => r.ReceptCimkek)
-                .HasForeignKey(rc => rc.ReceptId);
+                .HasForeignKey(rc => rc.ReceptId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<ReceptCimke>()
                 .HasOne(rc => rc.Cimke)
                 .WithMany(c => c.ReceptCimkek)
-                .HasForeignKey(rc => rc.CimkeId);
+                .HasForeignKey(rc => rc.CimkeId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<MentettRecept>()
                 .HasKey(mr => new { mr.UserId, mr.ReceptId });
@@ -77,12 +79,14 @@ namespace ReceptekWebAPI.Data
             modelBuilder.Entity<MentettRecept>()
                 .HasOne(mr => mr.User)
                 .WithMany(u => u.MentettReceptek)
-                .HasForeignKey(mr => mr.UserId);
+                .HasForeignKey(mr => mr.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<MentettRecept>()
                 .HasOne(mr => mr.Recept)
                 .WithMany(r => r.MentettReceptek)
-                .HasForeignKey(mr => mr.ReceptId);
+                .HasForeignKey(mr => mr.ReceptId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             base.OnModelCreating(modelBuilder);
         }
