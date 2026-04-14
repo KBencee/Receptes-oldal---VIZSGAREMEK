@@ -3,8 +3,9 @@ import { Link, useNavigate } from 'react-router-dom'
 import { AuthUserContext } from '../context/AuthenticatedUserContextProvider'
 import styles from '../css/Profile.module.css'
 import { useQuery } from '@tanstack/react-query'
+import { BASE_URL } from '../services/publicAPI'
 
-const API_BASE_URL = "https://cbnncff2-7114.euw.devtunnels.ms";
+const API_BASE_URL = BASE_URL + "/api";
 
 const Profile = () => {
     const authUser = useContext(AuthUserContext)
