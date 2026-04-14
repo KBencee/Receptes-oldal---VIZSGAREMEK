@@ -4,7 +4,6 @@ import RecipeCard from './RecipeCard'
 import type { RecipeType } from '../types/RecipeTypes'
 import { createRecipeQueryOption } from '../queryOptions/createRecipeQueryOption'
 
-
 const Recipes = ({ searchResults }: { searchResults: RecipeType[]}) => {
   const {data, isPending, isFetched, isError} = useQuery(createRecipeQueryOption())
   const recipesToDisplay = searchResults.length > 0 ? searchResults : data

@@ -4,7 +4,6 @@ import { menuItems, setActive } from '../components/NavMiddle'
 import { useNavigate } from 'react-router-dom'
 import styles from '../css/HomeBtn.module.css'
 
-
 const HomeBtn = () => {
     const navigate = useNavigate()
     const goToHome = () => {

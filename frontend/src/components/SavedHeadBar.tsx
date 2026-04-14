@@ -1,6 +1,5 @@
 import styles from '../css/Headbar.module.css'
 
-
 const SavedHeadBar = () => {
   return (
     <div className={styles.headBar}>

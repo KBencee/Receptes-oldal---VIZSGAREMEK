@@ -1,4 +1,3 @@
-
 const UploadAlert = (props: { text: string, onClick: () => void }) => {
 
   return (

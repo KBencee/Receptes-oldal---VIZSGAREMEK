@@ -6,7 +6,6 @@ import { useContext } from "react";
 import { AuthUserContext } from "../context/AuthenticatedUserContextProvider";
 import styles from '../css/Headbar.module.css'
 
-
 const API_BASE_URL = "https://cbnncff2-7114.euw.devtunnels.ms";
 
 const ProfileHeadBar = () => {
