@@ -5,8 +5,9 @@ import SettingsTab from "./SettingsTab";
 import { useContext } from "react";
 import { AuthUserContext } from "../context/AuthenticatedUserContextProvider";
 import styles from '../css/Headbar.module.css'
+import { BASE_URL } from "../services/publicAPI";
 
-const API_BASE_URL = "https://cbnncff2-7114.euw.devtunnels.ms";
+const API_BASE_URL = BASE_URL;
 
 const ProfileHeadBar = () => {
   const authUser = useContext(AuthUserContext);

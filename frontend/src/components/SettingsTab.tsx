@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import ImageUpload from "./ImageUpload";
 import { toast } from "sonner";
 import { useQueryClient, type QueryClient } from "@tanstack/react-query";
+import { BASE_URL } from "../services/publicAPI";
 
-const API_BASE_URL = "https://cbnncff2-7114.euw.devtunnels.ms/api";
+const API_BASE_URL = BASE_URL;
 const token = localStorage.getItem("access");
 
 const editUsername = (props: {
@@ -11,7 +12,7 @@ const editUsername = (props: {
   reloadFunc: () => void;
   queryClient: QueryClient;
 }) => {
-  fetch(`${API_BASE_URL}/Auth/me/username`, {
+  fetch(`${API_BASE_URL}/api/Auth/me/username`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

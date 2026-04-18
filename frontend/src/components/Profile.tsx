@@ -5,7 +5,7 @@ import styles from '../css/Profile.module.css'
 import { useQuery } from '@tanstack/react-query'
 import { BASE_URL } from '../services/publicAPI'
 
-const API_BASE_URL = BASE_URL + "/api";
+const API_BASE_URL = BASE_URL;
 
 const Profile = () => {
     const authUser = useContext(AuthUserContext)
